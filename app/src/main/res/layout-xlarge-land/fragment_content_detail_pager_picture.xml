@@ -18,7 +18,7 @@
         android:visibility="gone"
         android:layout_centerInParent="true"/>
 
-    <android.support.v7.widget.AppCompatImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/download"
         android:layout_width="@dimen/content_detail_video_hint_size"
         android:layout_height="@dimen/content_detail_video_hint_size"

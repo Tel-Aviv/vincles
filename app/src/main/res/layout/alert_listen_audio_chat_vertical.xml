@@ -52,7 +52,7 @@
             android:layout_width="@dimen/chat_element_audio_play_size"
             android:layout_height="@dimen/chat_element_audio_play_size">
 
-            <android.support.v7.widget.AppCompatImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/play_iv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -60,7 +60,7 @@
                 android:tint="@color/colorPrimary"
                 />
 
-            <android.support.v7.widget.AppCompatImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/download"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

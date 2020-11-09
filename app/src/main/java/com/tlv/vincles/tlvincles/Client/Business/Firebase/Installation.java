@@ -6,10 +6,6 @@ import com.tlv.vincles.tlvincles.BuildConfig;
 import com.tlv.vincles.tlvincles.Client.Preferences.UserPreferences;
 import com.tlv.vincles.tlvincles.Utils.MyApplication;
 
-//import cat.bcn.vincles.mobile.BuildConfig;
-//import cat.bcn.vincles.mobile.Client.Preferences.UserPreferences;
-//import cat.bcn.vincles.mobile.Utils.MyApplication;
-
 public class Installation {
 
     public static final String OS_ANDROID= "ANDROID";

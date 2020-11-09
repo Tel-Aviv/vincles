@@ -33,7 +33,7 @@ public class VersionControlAlert {
             continueToApp(true);
             return;
         }
-        String language = new UserPreferences().getUserLanguage().equals(UserRegister.ESP) ? "es" : "ca";
+        String language = new UserPreferences().getUserLanguage().equals(UserRegister.EN) ? "en" : "iw";
 
         if (context instanceof AppCompatActivity) {
             dismissPreviousDialog((AppCompatActivity)context);
@@ -77,8 +77,9 @@ public class VersionControlAlert {
     }
 
     private void continueToApp(boolean b) {
-        Log.d("versionControlAlert", "continueToApp VersionCOntrolAlert");
-        if (controlVersionInterface==null)return;
+        Log.d("versionControlAlert", "continueToApp VersionControlAlert");
+        if (controlVersionInterface==null)
+            return;
         controlVersionInterface.continueToApp(b);
     }
 

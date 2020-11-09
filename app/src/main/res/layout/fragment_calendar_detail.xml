@@ -11,7 +11,7 @@
     android:orientation="vertical"
     tools:activity="cat.bcn.vincles.mobile.UI.Contacts.ContactsFragment">
 
-    <cat.bcn.vincles.mobile.UI.Compound.BackCompoundView
+    <com.tlv.vincles.tlvincles.UI.Compound.BackCompoundView
         android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/gallery_back_button_size"
@@ -181,7 +181,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/back"
                 app:layout_constraintLeft_toLeftOf="parent"/>
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

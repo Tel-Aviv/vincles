@@ -43,7 +43,7 @@
         app:layout_constraintTop_toBottomOf="@+id/guideline7"
         app:layout_constraintVertical_bias="1.0">
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -115,7 +115,7 @@
                     android:background="@drawable/radiogroup_selector_left"
                     android:button="@null"
                     android:gravity="center"
-                    android:text="@string/catalan"
+                    android:text="@string/hebrew"
                     android:textColor="@drawable/radiogroup_selector_text" />
 
                 <RadioButton
@@ -126,7 +126,7 @@
                     android:background="@drawable/radiogroup_selector_right"
                     android:button="@null"
                     android:gravity="center"
-                    android:text="@string/spanish"
+                    android:text="@string/english"
                     android:textColor="@drawable/radiogroup_selector_text" />
             </RadioGroup>
 
@@ -410,11 +410,11 @@
 
             </LinearLayout>
 
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
 
-    <android.support.constraint.Guideline
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

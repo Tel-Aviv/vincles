@@ -11,7 +11,7 @@
     android:orientation="vertical"
     tools:activity="cat.bcn.vincles.mobile.UI.ContentDetail.ContentDetailFragment">
 
-    <cat.bcn.vincles.mobile.UI.Compound.BackCompoundView
+    <com.tlv.vincles.tlvincles.UI.Compound.BackCompoundView
         android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/gallery_back_button_size"

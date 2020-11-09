@@ -21,9 +21,9 @@ public class Environment extends Application {
 
 
     public Environment(Context c){
-        VERSION_CONTROL_URL = ""; // ok c.getResources().getString(R.string.control_version_url);
-        API_BASE_URL = ""; // okc.getResources().getString(R.string.api_base_url);
-        API_BASIC_AUTH = ""; //ok c.getResources().getString(R.string.api_key);
+        VERSION_CONTROL_URL = c.getResources().getString(R.string.control_version_url);
+        API_BASE_URL = c.getResources().getString(R.string.api_base_url);
+        API_BASIC_AUTH = c.getResources().getString(R.string.api_key);
         RATE_ME_URL = ""; // ok c.getResources().getString(R.string.rate_url);
         MAPS_KEY = ""; // ok c.getResources().getString(R.string.maps_key);
         ANALYTICS_KEY = ""; // ok c.getResources().getString(R.string.analytic_key);

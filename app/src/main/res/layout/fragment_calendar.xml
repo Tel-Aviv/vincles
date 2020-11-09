@@ -1,4 +1,4 @@
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frameLayout2"
@@ -10,7 +10,7 @@
     android:paddingBottom="@dimen/gallery_padding_top_bottom"
     tools:activity="cat.bcn.vincles.mobile.UI.Contacts.ContactsFragment">
 
-    <cat.bcn.vincles.mobile.UI.Compound.BackCompoundView
+    <com.tlv.vincles.tlvincles.UI.Compound.BackCompoundView
         android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/gallery_back_button_size"
@@ -37,7 +37,7 @@
         app:layout_constraintTop_toTopOf="@+id/back" />
 
 
-    <cat.bcn.vincles.mobile.UI.Compound.ActionCompoundView
+    <com.tlv.vincles.tlvincles.UI.Compound.ActionCompoundView
         android:id="@+id/action"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/gallery_back_button_size"
@@ -72,7 +72,7 @@
     
 
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -98,7 +98,7 @@
         app:layout_constraintBottom_toTopOf="@+id/bottom_bar"
         app:layout_constraintTop_toBottomOf="@+id/day_tv" />
 
-    <cat.bcn.vincles.mobile.UI.Compound.CalendarCompoundView
+    <com.tlv.vincles.tlvincles.UI.Compound.CalendarCompoundView
         android:id="@+id/calendar_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -113,7 +113,7 @@
         app:layout_constraintTop_toBottomOf="@+id/back">
 
 
-    </cat.bcn.vincles.mobile.UI.Compound.CalendarCompoundView>
+    </com.tlv.vincles.tlvincles.UI.Compound.CalendarCompoundView>
 
     <TextView
         android:id="@+id/no_events_error"
@@ -211,4 +211,4 @@
 
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

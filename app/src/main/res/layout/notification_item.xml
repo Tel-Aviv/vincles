@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <cat.bcn.vincles.mobile.UI.Compound.DeleteNotificationCompoundView
+        <com.tlv.vincles.tlvincles.UI.Compound.DeleteNotificationCompoundView
             android:id="@+id/delete"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/notifications_delete_size"
@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="@dimen/notifications_item_text_size"
-            android:text="hora"
+            android:text="hour"
             android:layout_toLeftOf="@+id/delete"/>
 
         <TextView
@@ -52,7 +52,7 @@
             android:layout_below="@id/date"
             android:textStyle="bold"
             android:textSize="@dimen/notifications_item_text_size"
-            android:text="missatges"
+            android:text="messages"
             android:layout_toLeftOf="@+id/delete"/>
 
         <FrameLayout

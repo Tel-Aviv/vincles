@@ -53,7 +53,7 @@ public class TermsAndConditionsActivity extends BaseActivity implements View.OnC
             setContentView(R.layout.activity_terms_and_conditions);
 
             getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-            getSupportActionBar().setCustomView(R.layout.custom_action_bar);
+            //getSupportActionBar().setCustomView(R.layout.custom_action_bar);
 
             acceptBtn = findViewById(R.id.accept);
             cancelBtn = findViewById(R.id.cancel);

@@ -41,7 +41,7 @@
         android:layout_marginTop="@dimen/dialogs_margin_below_close"
         android:gravity="top|left"
         android:fontFamily="@font/akkurat"
-        tools:text="La teva solicitud de contacte s'ha enviat"
+        tools:text="@string/requets_sent"
         android:textSize="@dimen/dialogs_text_size"
         android:layout_below="@+id/close_dialog"
         app:layout_constraintLeft_toLeftOf="parent"

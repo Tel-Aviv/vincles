@@ -4,12 +4,12 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <com.github.chrisbanes.photoview.PhotoView
         android:id="@+id/imageView"
+        android:layout_centerInParent="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
+        android:layout_height="match_parent"
+        />
     <ImageView
         android:id="@+id/video_hint"
         android:layout_width="@dimen/content_detail_video_hint_size"
@@ -18,7 +18,7 @@
         android:visibility="gone"
         android:layout_centerInParent="true"/>
 
-    <androidx.appcompat.widget.AppCompatImageView
+    <android.support.v7.widget.AppCompatImageView
         android:id="@+id/download"
         android:layout_width="@dimen/content_detail_video_hint_size"
         android:layout_height="@dimen/content_detail_video_hint_size"

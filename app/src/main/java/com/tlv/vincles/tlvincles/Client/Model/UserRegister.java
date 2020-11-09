@@ -9,6 +9,8 @@ public class UserRegister {
     public static final String FEMALE = "FEMALE";
     public static final String CAT = "CAT";
     public static final String ESP = "ESP";
+    public static final String EN = "EN";
+    public static final String HEB = "HEB";
     public static final String LANGUAGE_NOT_SET = "LANGUAGE_NOT_SET";
     public static final boolean LIVES_IN_BARCELONA = true;
     public static final boolean NOT_LIVES_IN_BARCELONA = false;

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Vincles BCN</string>
+    <string name="app_name">Vincles TLV</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="title_activity_main_fragment_manager">MainFragmentManagerActivity</string>
 
@@ -20,29 +20,29 @@
     <string name="error_audio_busy_for_video">Una altra aplicació està utilitzant el micròfon. No és possible gravar un vídeo en aquest moment.</string>
 
     <!--ANALYTICS TRACKING-->
-    <string name="tracking_home" translatable="false">Inici</string>
+    <string name="tracking_home">Inici</string>
     <string name="tracking_contacts" translatable="false">Contactes</string>
-    <string name="tracking_add_contact" translatable="false">Afegir contactes</string>
+    <string name="tracking_add_contact">Afegir contactes</string>
     <string name="tracking_gallery" translatable="false">Fotos i Vídeos</string>
     <string name="tracking_gallery_detail" translatable="false">Fotos i Vídeos: detall</string>
     <string name="tracking_share_contacts_gallery" translatable="false">Fotos i Vídeos: compartir</string>
     <string name="tracking_chat" translatable="false">Chat</string>
     <string name="tracking_group_detail" translatable="false">Grups: detall de grup</string>
-    <string name="tracking_notifications" translatable="false">Avisos</string>
+    <string name="tracking_notifications">Avisos</string>
     <string name="tracking_call" translatable="false">Vídeo-trucada</string>
-    <string name="tracking_calendar" translatable="false">Agenda</string>
-    <string name="tracking_calendar_meeting_detail" translatable="false">Detall de cita de l\'agenda</string>
+    <string name="tracking_calendar">Agenda</string>
+    <string name="tracking_calendar_meeting_detail">Detall de cita de l\'agenda</string>
     <string name="tracking_calendar_new_meeting" translatable="false">Crear nova cita de l\'agenda</string>
-    <string name="tracking_config" translatable="false">Configuració</string>
-    <string name="tracking_config_personal_data" translatable="false">Editar perfil</string>
-    <string name="tracking_about" translatable="false">Sobre Vincles BCN</string>
-    <string name="tracking_login" translatable="false">Login</string>
-    <string name="tracking_register" translatable="false">Nou Registre</string>
+    <string name="tracking_config">Configuració</string>
+    <string name="tracking_config_personal_data">Editar perfil</string>
+    <string name="tracking_about">Sobre Vincles BCN</string>
+    <string name="tracking_login">Login</string>
+    <string name="tracking_register">Nou Registre</string>
     <string name="tracking_terms_conditions" translatable="false">Termes i condicions</string>
     <string name="tracking_terms_splash" translatable="false">Splash screen</string>
-    <string name="tracking_validate_user" translatable="false">Validació d\'usuari registrat</string>
-    <string name="tracking_recover_password" translatable="false">Recuperació de contrasenya</string>
-    <string name="tracking_initial_guide" translatable="false">Tour</string>
+    <string name="tracking_validate_user">Validació d\'usuari registrat</string>
+    <string name="tracking_recover_password">Recuperació de contrasenya</string>
+    <string name="tracking_initial_guide">Tour</string>
     <string name="tracking_campaign_url" translatable="false">https://play.google.com/store/apps/details?id=cat.bcn.vincles.mobile&amp;referrer=%1$s</string>
 
     <!--VERSION CONTROL-->
@@ -736,5 +736,10 @@
     <string name="should_accept_permissions_microphone">Necessites activar el permis per fer servir el micròfon a la secció de Configuració del teu dispositiu.</string>
     <string name="should_accept_permissions_phone_call">Necessites activar els permisos de càmera i micròfon per fer trucades a la secció de Configuració del teu dispositiu.</string>
     <string name="should_accept_permissions_calendar">Necessites activar el permis per accedir al calendari a la secció de Configuració del teu dispositiu.</string>
+    <string name="control_version_url" translatable="false">https://api.tel-aviv.gov.il/vincles/vcs</string>
+    <string name="api_base_url" translatable="false">https://api.tel-aviv.gov.il/vincles</string>
+    <string name="api_key" translatable="false">1234</string>
+    <string name="hebrew">Hebrew</string>
+    <string name="requets_sent">La teva solicitud de contacte s\'ha enviat</string>
 
 </resources>
