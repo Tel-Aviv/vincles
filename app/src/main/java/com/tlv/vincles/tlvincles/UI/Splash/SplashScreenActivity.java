@@ -85,46 +85,51 @@ public class SplashScreenActivity extends AppCompatActivity implements AlertMess
                 int userID = userPreferences.getUserID();
                 boolean isLogged = userPreferences.getLoginDataDownloaded();
 
+                Intent intent = new Intent().setClass(
+                        SplashScreenActivity.this, MainFragmentManagerActivity.class);
+                startActivity(intent);
+
+                // ok
                 //old preferences for migration
-                SharedPreferences preferences = getSharedPreferences(
-                        "com.tlv.vincles.tlvincles.app-preferences", Context.MODE_PRIVATE);
-                final long fase1UserId = preferences.getLong("com.tlv.vincles.tlvincles.user-id", 0L);
-
-                if (fase1UserId != 0) {
-                    Log.d("migrt","fase 1 user id:"+fase1UserId);
-                    Fase1SQLiteHelper sqLiteHelper = new Fase1SQLiteHelper(context);
-                    try {
-                        String[] userPwd = sqLiteHelper.getUserPassword((int) fase1UserId);
-
-                        Intent intent = new Intent().setClass(
-                                SplashScreenActivity.this, LoginActivity.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                        Bundle bundle = new Bundle();
-                        bundle.putString("username", userPwd[0]);
-                        bundle.putString("password", userPwd[1]);
-                        intent.putExtras(bundle);
-                        startActivity(intent);
-                        overridePendingTransition(0, 0);
-
-                    }catch (Exception e){
-                        Log.e("migrt","ERROR");
-                        //Go to Login
-                        startActivityIntent(SplashScreenActivity.this, LoginActivity.class);
-                    }
-
-                } else if (userID != 0 && isLogged) {
-                    Intent intent = new Intent().setClass(
-                            SplashScreenActivity.this, MainFragmentManagerActivity.class);
-                    startActivity(intent);
-                } else if (userID != 0) {
-                    Intent intent = new Intent().setClass(
-                            SplashScreenActivity.this, LoginActivity.class);
-                    startActivity(intent);
-                } else {
-                    Intent intent = new Intent().setClass(
-                            SplashScreenActivity.this, TermsAndConditionsActivity.class);
-                    startActivity(intent);
-                }
+//                SharedPreferences preferences = getSharedPreferences(
+//                        "com.tlv.vincles.tlvincles.app-preferences", Context.MODE_PRIVATE);
+//                final long fase1UserId = preferences.getLong("com.tlv.vincles.tlvincles.user-id", 0L);
+//
+//                if (fase1UserId != 0) {
+//                    Log.d("migrt","fase 1 user id:"+fase1UserId);
+//                    Fase1SQLiteHelper sqLiteHelper = new Fase1SQLiteHelper(context);
+//                    try {
+//                        String[] userPwd = sqLiteHelper.getUserPassword((int) fase1UserId);
+//
+//                        Intent intent = new Intent().setClass(
+//                                SplashScreenActivity.this, LoginActivity.class);
+//                        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+//                        Bundle bundle = new Bundle();
+//                        bundle.putString("username", userPwd[0]);
+//                        bundle.putString("password", userPwd[1]);
+//                        intent.putExtras(bundle);
+//                        startActivity(intent);
+//                        overridePendingTransition(0, 0);
+//
+//                    }catch (Exception e){
+//                        Log.e("migrt","ERROR");
+//                        //Go to Login
+//                        startActivityIntent(SplashScreenActivity.this, LoginActivity.class);
+//                    }
+//
+//                } else if (userID != 0 && isLogged) {
+//                    Intent intent = new Intent().setClass(
+//                            SplashScreenActivity.this, MainFragmentManagerActivity.class);
+//                    startActivity(intent);
+//                } else if (userID != 0) {
+//                    Intent intent = new Intent().setClass(
+//                            SplashScreenActivity.this, LoginActivity.class);
+//                    startActivity(intent);
+//                } else {
+//                    Intent intent = new Intent().setClass(
+//                            SplashScreenActivity.this, TermsAndConditionsActivity.class);
+//                    startActivity(intent);
+//                }
             }};
 
         Timer timer = new Timer();

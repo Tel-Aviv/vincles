@@ -32,15 +32,14 @@ public class GetServerTimeRequest  extends AsyncTask<String, Void, String> {
 
     public GetServerTimeRequest(OnServerTimeDoneListener onTaskDoneListener) {
 
-            this.urlStr = Environment.getApiBaseUrl()+"/t/vincles-bcn.cat/vincles-services/1.0/public/time/current";
+            // ok
+            //this.urlStr = Environment.getApiBaseUrl()+"/t/vincles-bcn.cat/vincles-services/1.0/public/time/current";
+            this.urlStr = Environment.getApiBaseUrl()+"/Time/current";
             this.onServerTimeDoneListener = onTaskDoneListener;
         }
 
         @Override
         protected String doInBackground(String... params) {
-
-
-
             try {
 
                 URL mUrl = new URL(urlStr);

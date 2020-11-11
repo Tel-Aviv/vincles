@@ -116,7 +116,7 @@ public class AddContactFragment extends Fragment implements View.OnClickListener
                                 boolean isLandscape = dm.widthPixels > dm.heightPixels;
                                 boolean isTablet = getResources().getBoolean(R.bool.isTablet);
 
-                                // some code depending on keyboard visiblity status 
+                                // some code depending on keyboard visibility status 
                                 if (seeCodeLayout != null) seeCodeLayout.setVisibility(isOpen && (isTablet
                                         || !isLandscape) ? View.GONE : View.VISIBLE);
                                 if (cancel != null) {

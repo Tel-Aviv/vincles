@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Vincles BCN</string>
-    <string name="add_contacts_see_code_button">ראה את הקוד שלי</string>
+    <string name="add_contacts_see_code_button">הצג את הקוד</string>
     <string name="add_contacts_add_code_text">יש לי קוד קישור של משתמש אחר ואני רוצה להוסיף אותו</string>
     <string name="add_contacts_add_code_button">הוסף איש קשר</string>
     <string name="add_contacts_add_code_hint">הכנס את הקוד</string>
@@ -11,8 +11,8 @@
     <string name="access_help_responsive_title">יישום מותאם</string>
     <string name="access_help_responsive_text">ישום זה תוכנן לצפייה בפורמט אנכי ואופקי. כאשר אתה מפעיל את המכשיר שלך, התוכן יסתגל.</string>
     <string name="access_help_profile_config_title">הגדרות פרופיל</string>
-    <string name="add_contacts_cancel">לא להוסיף ולחזור לאנשי קשר</string>
-    <string name="add_contacts_see_code_text">אני רוצה לראות את קוד הקישור שלי לאיש קשר אחר שיוסיף אותי</string>
+    <string name="add_contacts_cancel">ביטול, חזרה לאנשי קשר</string>
+    <string name="add_contacts_see_code_text">שתף קוד זה עם חברים ליצירת המעגלים</string>
     <string name="alert">התרעה</string>
     <string name="alerts">התרעות</string>
     <string name="all_files">כל הקבצים</string>
@@ -35,7 +35,7 @@
     <string name="about_text">וינסלס הוא שירות תמיכה וליווי בשימור, חיזוק ויצירת קישורים יחסיים של המשתמשים הקשישים בשירות. הקשיש; שילוב של משפחה, חברים, שכנים ואנשים מהסביבה האמינה שלך ברשת שלך. מצד שני, שירות וינסלס מכוון לשלב את הקשישים בקבוצות שנוצרו עם משתמשים אחרים בשירות, לעודד אינטראקציה ולקדם השתתפות בפעילויות מקוונות ופעילות פנים אל פנים.</string>
     <string name="before">קודם</string>
     <string name="birthdate">* תאריך לידה</string>
-    <string name="calendar">לוּחַ שָׁנָה</string>
+    <string name="calendar">לוח שנה</string>
     <string name="calendar_accept_date">מאשר את הפגישה</string>
     <string name="calendar_accepted_state">מאשר</string>
     <string name="calendar_cancel_confirmation">האם אתה בטוח שברצונך לבטל את הפגישה?</string>
@@ -68,11 +68,11 @@
     <string name="calendar_meeting_title_missing">כותרת - שדה חובה</string>
     <string name="calendar_minutes">דקות</string>
     <string name="calendar_month_saturday">שבת</string>
-    <string name="calendar_month_friday">יום שישי</string>
-    <string name="calendar_month_monday">יום שני</string>
-    <string name="calendar_month_thursday">יום חמישי</string>
-    <string name="calendar_month_tuesday">יום שלישי</string>
-    <string name="calendar_month_sunday">יום ראשון</string>
+    <string name="calendar_month_friday">ו\'</string>
+    <string name="calendar_month_monday">ב\'</string>
+    <string name="calendar_month_thursday">ה\'</string>
+    <string name="calendar_month_tuesday">ג\'</string>
+    <string name="calendar_month_sunday">א\'</string>
     <string name="calendar_month_wednesday">יום חמישי</string>
     <string name="calendar_new_date_description">כתוב כאן את כותרת הפגישה</string>
     <string name="calendar_no_dates_this_day">אין לך פגישות ביום זה</string>
@@ -80,12 +80,12 @@
     <string name="calendar_reject_confirmation">האם אתה בטוח שברצונך לדחות את הפגישה?</string>
     <string name="calendar_reject_date">דחה את הפגישה</string>
     <string name="calendar_rejected_state">דחה</string>
-    <string name="calendar_see_month">ראה פירוט מלא</string>
-    <string name="calendar_see_today">ראה היום</string>
-    <string name="calendar_see_tomorrow">להתראות מחר</string>
+    <string name="calendar_see_month">הצג הכל</string>
+    <string name="calendar_see_today">הצג היום</string>
+    <string name="calendar_see_tomorrow">הצג מחר</string>
     <string name="calendar_stop_inviting">תפסיקי להזמין</string>
-    <string name="calendar_today_date">היום,% 1 $ s</string>
-    <string name="calendar_tomorrow_date">מחר,% 1 $ s</string>
+    <string name="calendar_today_date">היום, %1$s</string>
+    <string name="calendar_tomorrow_date">מחר, %1$s</string>
     <string name="calls_answer_call_button">להמריא</string>
     <string name="calls_being_called_title">התקשר מ-% 1 $ s</string>
     <string name="calls_calling_title">מתקשר ל-% 1 $ s</string>
@@ -144,7 +144,7 @@
     <string name="configuration_new_password">סיסמה חדשה</string>
     <string name="configuration_new_password_verify">חזור על הסיסמה</string>
     <string name="configuration_old_password">סיסמה נוכחית</string>
-    <string name="configuration_personal_data">Personal data</string>
+    <string name="configuration_personal_data">מידע אישי</string>
     <string name="configuration_photo">צילום</string>
     <string name="configuration_save">שמור</string>
     <string name="configuration_sync_calendar">סנכרן פגישות עם לוח השנה הנייד שלך</string>
@@ -154,8 +154,8 @@
     <string name="configuration_text_small">קטן</string>
     <string name="configuration_username">* שם משתמש</string>
     <string name="contacts">אנשי קשר</string>
-    <string name="contacts_filter_all">ראה את כל אנשי הקשר</string>
-    <string name="contacts_filter_all_title">כל אנשי הקשר</string>
+    <string name="contacts_filter_all">ראה את כל אנשי קשר</string>
+    <string name="contacts_filter_all_title">כל אנשי קשר</string>
     <string name="contacts_filter_dynam">ראה את הדינמיזרים</string>
     <string name="contacts_filter_dynam_title">ממריצים</string>
     <string name="contacts_filter_family_friends">לראות משפחה וחברים</string>
@@ -274,8 +274,8 @@
     <string name="validate_error">הקוד חייב להיות בן 4 ספרות או אות אחת וארבע ספרות</string>
     <string name="view_all_my_files">הצג רק את הקבצים שלי</string>
     <string name="view_received_files">הצג רק קבצים שהתקבלו</string>
-    <string name="welcome_female">ברוך הבא,% s!</string>
-    <string name="welcome_male">ברוכה הבאה,% s!</string>
+    <string name="welcome_female">ברוכה הבאה, %1$s!</string>
+    <string name="welcome_male">ברוך הבא, %1$s!</string>
     <string name="yes">כן</string>
     <string name="error_1103">המשתמש לא יכול להיות משתמש ב- TLV Vincles</string>
     <string name="error_1106">לא ניתן לקשר ולקשר משתמש בו זמנית</string>
@@ -321,4 +321,28 @@
     <string name="male">זכר</string>
     <string name="no">לא</string>
     <string name="mail">אימייל</string>
+    <string name="no_contacts">עדיין אין לך אנשי קשר</string>
+    <string name="login_sending_data">טוען נתונים</string>
+    <string name="login_loading_user_info">טוען פרטי המשתמש</string>
+    <string name="media_shared_ko">לא ניתן היה לשתף תוכן</string>
+    <string name="media_shared_ok">התוכן שותף בהצלחה</string>
+    <string name="no_contacts_group">אין לך עדיין קבוצות</string>
+    <string name="not_valid_date">השדה חובה</string>
+    <string name="network_alert_text">אין לך קישוריות לרשת</string>
+    <string name="menu_help">עזרה</string>
+    <string name="error_server">לא ניתן להתחבר לשרת, נסה שוב מאוחר יותר</string>
+    <string name="error_removing_content">אירעה שגיאה בניסיון למחוק את התוכן</string>
+    <string name="error_opening_image">שגיאה בפתיחת התמונה</string>
+    <string name="error_default">שגיאה</string>
+    <string name="error_code_generator_send">קוד הקישור שהזנת שגוי.</string>
+    <string name="group_detail_send_invite_ok_title">בקשת יצירת קשר</string>
+    <string name="group_detail_send_invite_ok_message">בקשת יצירת הקשר שלך נשלחה בהצלחה</string>
+    <string name="group_detail_send_invite">שלח הזמנה</string>
+    <string name="group_detail_resend_invite">הזמן משתמש</string>
+    <string name="gallery_share_title">בחר את הקבצים</string>
+    <string name="error_passwords_repeat">סיסמאות אינן תואמות, או שהן פחות מ -8 תווים או ארוכות מ- 16</string>
+    <string name="error_audio_busy_for_video">"יישום נוסף הוא באמצעות המיקרופון. בשלב זה לא ניתן להקליט סרטון. "</string>
+    <string name="error_audio_busy">יישום נוסף הוא באמצעות המיקרופון. לא ניתן להקליט הודעת שמע בשלב זה.</string>
+    <string name="error_afegir_contacte_no_network">לא ניתן היה להוסיף את איש הקשר. בבקשה נסה שוב מאוחר יותר.</string>
+    <string name="error_2804">זיכרון מלא. מחק תוכן מהמכשיר שלך.</string>
 </resources>

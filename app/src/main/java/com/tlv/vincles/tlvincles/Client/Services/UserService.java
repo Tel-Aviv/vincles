@@ -14,13 +14,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Map;
 
-//import cat.bcn.vincles.mobile.Client.Model.ChangePasswordResponseModel;
-//import cat.bcn.vincles.mobile.Client.Model.GetUser;
-//import cat.bcn.vincles.mobile.Client.Model.NotificationRest;
-//import cat.bcn.vincles.mobile.Client.Model.Serializers.AddUser;
-//import cat.bcn.vincles.mobile.Client.Model.TokenFromLogin;
-//import cat.bcn.vincles.mobile.Client.Model.UserRegister;
-//import cat.bcn.vincles.mobile.Client.NetworkUsage.DataUsage;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -78,10 +71,14 @@ public interface UserService {
     @POST("/t/vincles-bcn.cat/vincles-services/1.0/circles/users")
     public Call<AddUser> associateRegistered(@Body JsonObject association);
 
-    @POST("/t/vincles-bcn.cat/vincles-services/1.0/circles/mine/codes")
+    // ok
+    //@POST("/t/vincles-bcn.cat/vincles-services/1.0/circles/mine/codes")
+    @POST("/me/circles/codes")
     public Call<JsonObject> generateCode(@Body JsonObject empty);
 
-    @GET("/t/vincles-bcn.cat/vincles-services/1.0/device/notifications")
+    // ok
+    // @GET("/t/vincles-bcn.cat/vincles-services/1.0/device/notifications")
+    @GET("/me/notifications")
     public Call<ArrayList<NotificationRest>> getNotifications(@QueryMap Map<String, String> params);
 
     @GET("/t/vincles-bcn.cat/vincles-services/1.0/device/notifications/{notificationID}")

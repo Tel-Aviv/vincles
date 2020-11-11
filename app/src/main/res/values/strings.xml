@@ -70,8 +70,8 @@
     <!-- HOME -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="check_alerts">Consulta els avisos</string>
-    <string name="welcome_male">Benvingut a Vincles, %s!</string>
-    <string name="welcome_female">Benvinguda a Vincles, %s!</string>
+    <string name="welcome_male">Benvingut a Vincles, %s$ד!</string>
+    <string name="welcome_female">Benvinguda a Vincles, %1$s!</string>
     <string name="see_all_album">Fotos i vídeos</string>
     <string name="see_all_contacts">Veure tots els contactes</string>
     <string name="see_all_meetings">Calendari</string>
@@ -737,7 +737,7 @@
     <string name="should_accept_permissions_phone_call">Necessites activar els permisos de càmera i micròfon per fer trucades a la secció de Configuració del teu dispositiu.</string>
     <string name="should_accept_permissions_calendar">Necessites activar el permis per accedir al calendari a la secció de Configuració del teu dispositiu.</string>
     <string name="control_version_url" translatable="false">https://api.tel-aviv.gov.il/vincles/vcs</string>
-    <string name="api_base_url" translatable="false">https://api.tel-aviv.gov.il/vincles</string>
+    <string name="api_base_url" translatable="false">https://vincles.azurewebsites.net</string>
     <string name="api_key" translatable="false">1234</string>
     <string name="hebrew">Hebrew</string>
     <string name="requets_sent">La teva solicitud de contacte s\'ha enviat</string>

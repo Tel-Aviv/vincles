@@ -1,6 +1,7 @@
 package com.tlv.vincles.tlvincles.Client.Preferences;
 
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -367,7 +368,9 @@ public class UserPreferences {
 
     public String getName() {
         SharedPreferences sharedpreferences = context.getSharedPreferences(PREFS_VINCLES, Context.MODE_PRIVATE);
-        return sharedpreferences.getString("name", "");
+        // ok return sharedpreferences.getString("name", "");
+        String name = sharedpreferences.getString("name", "Oleg");
+        return name;
     }
 
     public void setLastName(String lastName) {
@@ -379,7 +382,8 @@ public class UserPreferences {
 
     public String getLastName() {
         SharedPreferences sharedpreferences = context.getSharedPreferences(PREFS_VINCLES, Context.MODE_PRIVATE);
-        return sharedpreferences.getString("lastName", "");
+        // ok return sharedpreferences.getString("lastName", "");
+        return sharedpreferences.getString("lastName", "Kleiman");
     }
 
     public void setEmail(String email) {
@@ -425,9 +429,12 @@ public class UserPreferences {
         editor.commit();
     }
 
-    public String getGender() {
+    public String   getGender() {
         SharedPreferences sharedpreferences = context.getSharedPreferences(PREFS_VINCLES, Context.MODE_PRIVATE);
-        return sharedpreferences.getString("gender", "MALE");
+        // ok
+        //return sharedpreferences.getString("gender", "MALE");
+        String gender = sharedpreferences.getString("gender", "MALE");
+        return gender;
     }
 
     public void setLivesInBarcelona(Boolean livesInBarcelona) {
@@ -478,7 +485,8 @@ public class UserPreferences {
 
     public boolean getLoginDataDownloaded() {
         SharedPreferences sharedpreferences = context.getSharedPreferences(PREFS_VINCLES, Context.MODE_PRIVATE);
-        return sharedpreferences.getBoolean("loginDataDownloaded", false);
+        // ok return sharedpreferences.getBoolean("loginDataDownloaded", false);
+        return sharedpreferences.getBoolean("loginDataDownloaded", true);
     }
 
     public void setIsAutodownload(boolean isAutodownload) {
@@ -538,6 +546,7 @@ public class UserPreferences {
         return setId;
     }
 
+    @SuppressLint("ApplySharedPref")
     public void addInvitedUser(Integer userId) {
         SharedPreferences sharedpreferences = context.getSharedPreferences(PREFS_VINCLES, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedpreferences.edit();
@@ -548,6 +557,7 @@ public class UserPreferences {
 
     }
 
+    @SuppressLint("ApplySharedPref")
     public void saveServerTime(long currentTime) {
         SharedPreferences sharedpreferences = context.getSharedPreferences(PREFS_VINCLES, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedpreferences.edit();

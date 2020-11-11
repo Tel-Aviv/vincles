@@ -226,8 +226,9 @@ public class MainFragmentManagerActivity extends BaseActivity
         userAvatar = navigationView.getHeaderView(0).findViewById(R.id.ivHeader);
         updateAvatar();
 
-        final TextView usernameTV = navigationView.getHeaderView(0).findViewById(R.id.header_textview);
-        usernameTV.setText(userPreferences.getName());
+        // ok
+//        final TextView usernameTV = navigationView.getHeaderView(0).findViewById(R.id.header_textview);
+//        usernameTV.setText(userPreferences.getName());
 
         if (savedInstanceState == null) {
             askForRating();

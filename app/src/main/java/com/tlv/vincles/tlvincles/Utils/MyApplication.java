@@ -70,6 +70,7 @@ public class MyApplication extends Application {
                                                 .schemaVersion(9)
                                                 .migration(new RealmMigrations())
                                                 .compactOnLaunch()
+                                                .allowWritesOnUiThread(true)
                                                 .build();
         Realm.setDefaultConfiguration(realmConfiguration);
 
