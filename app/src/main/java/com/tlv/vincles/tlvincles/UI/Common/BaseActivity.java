@@ -99,6 +99,7 @@ public abstract class BaseActivity extends AppCompatActivity implements AlertMes
         Log.d("lng","set base activity, language: "+language);
         Resources res = context.getResources();
         Configuration conf = res.getConfiguration();
+        // ok
 //        if (language.equals(UserRegister.LANGUAGE_NOT_SET) && getLocale(conf).contains("es")) {
 //            language = "es";
 //        } else if (language.equals(UserRegister.LANGUAGE_NOT_SET)) {

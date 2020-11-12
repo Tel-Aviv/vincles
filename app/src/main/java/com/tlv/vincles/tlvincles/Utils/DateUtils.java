@@ -145,8 +145,9 @@ public class DateUtils {
 
     public static String getCalendarDate(long millis, Locale locale) {
         Date date = new Date(millis);
-        String of = getOfText(date, isCatalan(locale));
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("d MMMM 'de' yyyy", locale);
+        // ok
+        //String of = getOfText(date, isCatalan(locale));
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("d MMMM yyyy", locale);
         return simpleDateFormat.format(date);
     }
 

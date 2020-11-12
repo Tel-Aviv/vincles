@@ -68,7 +68,9 @@ public interface UserService {
     @GET("/t/vincles-bcn.cat/vincles-services/1.0/users/{userID}/photo")
     public Call<ResponseBody> getPhoto(@Path("userID") String userID);
 
-    @POST("/t/vincles-bcn.cat/vincles-services/1.0/circles/users")
+    // ok
+    // @POST("/t/vincles-bcn.cat/vincles-services/1.0/circles/users")
+    @POST("/me/circles/users")
     public Call<AddUser> associateRegistered(@Body JsonObject association);
 
     // ok
@@ -81,7 +83,9 @@ public interface UserService {
     @GET("/me/notifications")
     public Call<ArrayList<NotificationRest>> getNotifications(@QueryMap Map<String, String> params);
 
-    @GET("/t/vincles-bcn.cat/vincles-services/1.0/device/notifications/{notificationID}")
+    // ok
+    // @GET("/t/vincles-bcn.cat/vincles-services/1.0/device/notifications/{notificationID}")
+    @GET("/me/notifications/{notificationID}")
     public Call<NotificationRest> getNotificationsByID(@Path("notificationID") int notificationID,
                                                        @QueryMap Map<String, String> params);
 
