@@ -63,7 +63,8 @@ public class MyApplication extends Application {
 
         checkContinueToApp();
 
-        setupLifecycleListener();
+        // ok
+//        setupLifecycleListener();
 
         Realm.init(context);
         RealmConfiguration realmConfiguration = new RealmConfiguration.Builder()
@@ -89,27 +90,28 @@ public class MyApplication extends Application {
         this.appInterface = appInterface;
     }
 
-    private void setupLifecycleListener() {
-        ProcessLifecycleOwner.get().getLifecycle().addObserver(lifecycleListener);
-    }
+    // ok
+//    private void setupLifecycleListener() {
+//        ProcessLifecycleOwner.get().getLifecycle().addObserver(lifecycleListener);
+//    }
 
-    public LifecycleObserver lifecycleListener = new LifecycleObserver() {
-        @OnLifecycleEvent(Lifecycle.Event.ON_START)
-        void onMoveToForeground() {
-            isBackground = false;
-            Log.d("LifecycleObserver", "Returning to foreground…");
-            UserPreferences userPreferences = new UserPreferences();
-//            Log.d("continuecheck", String.format("onMoveToForeground.getcontinueToApp() = %b", userPreferences.getcontinueToApp()));
-            if (userPreferences.getcontinueToApp())
-            if (appInterface!=null)appInterface.showVersionControl();
-        }
-
-        @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
-        void onMoveToBackground() {
-            isBackground = true;
-            Log.d("LifecycleObserver", "Moving to background…");
-        }
-    };
+//    public LifecycleObserver lifecycleListener = new LifecycleObserver() {
+//        @OnLifecycleEvent(Lifecycle.Event.ON_START)
+//        void onMoveToForeground() {
+//            isBackground = false;
+//            Log.d("LifecycleObserver", "Returning to foreground…");
+//            UserPreferences userPreferences = new UserPreferences();
+////            Log.d("continuecheck", String.format("onMoveToForeground.getcontinueToApp() = %b", userPreferences.getcontinueToApp()));
+//            if (userPreferences.getcontinueToApp())
+//            if (appInterface!=null)appInterface.showVersionControl();
+//        }
+//
+//        @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
+//        void onMoveToBackground() {
+//            isBackground = true;
+//            Log.d("LifecycleObserver", "Moving to background…");
+//        }
+//    };
 
     public interface AppInterface{
         void showVersionControl();

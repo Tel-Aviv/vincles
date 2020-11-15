@@ -164,10 +164,7 @@
     <string name="gallery_select_all">Seleccionar tot</string>
     <string name="gallery_deselect_all">Deseleccionar tot</string>
     <string name="gallery_no_content">Encara no tens contingut</string>
-
-
-
-    <string name="terms_and_conditions">TERMES I CONDICIONS</string>
+  <string name="terms_and_conditions">TERMES I CONDICIONS</string>
     <string name="accept">Acceptar</string>
     <string name="cancel">Cancel·lar</string>
     <string name="error">Error</string>
@@ -737,8 +734,9 @@
     <string name="should_accept_permissions_phone_call">Necessites activar els permisos de càmera i micròfon per fer trucades a la secció de Configuració del teu dispositiu.</string>
     <string name="should_accept_permissions_calendar">Necessites activar el permis per accedir al calendari a la secció de Configuració del teu dispositiu.</string>
     <string name="control_version_url" translatable="false">https://api.tel-aviv.gov.il/vincles/vcs</string>
-    <string name="api_base_url" translatable="false">https://vincles.azurewebsites.net</string>
-    <string name="api_key" translatable="false">1234</string>
+    <string name="api_base_url" translatable="false">http://10.0.2.2:63800</string>
+    <string name="rate_url" translatable="false">https://vincles.azurewebsites.net/rate</string>
+    <string name="api_key" translatable="false">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Ik9sZWcgS2xlaW1hbiIsImlkIjoiYzAwNyIsImlhdCI6MTUxNjIzOTAyMn0.TNbctE0CkpNy3yirWAZ15mDmxd6VhuGvt083aC0NIkA</string>
     <string name="hebrew">Hebrew</string>
     <string name="requets_sent">La teva solicitud de contacte s\'ha enviat</string>
 

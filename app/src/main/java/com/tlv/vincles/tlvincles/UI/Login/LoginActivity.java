@@ -56,25 +56,6 @@ import com.tlv.vincles.tlvincles.UI.Register.RegisterActivity;
 import com.tlv.vincles.tlvincles.UI.Splash.FragmentSplashScreen;
 import com.tlv.vincles.tlvincles.Utils.OtherUtils;
 
-
-//import cat.bcn.vincles.mobile.Client.Enviroment.Environment;
-//import cat.bcn.vincles.mobile.Client.Errors.ErrorHandler;
-//import cat.bcn.vincles.mobile.Client.Migration.MigrationDataDeleter;
-//import cat.bcn.vincles.mobile.Client.Model.TokenFromLogin;
-//import cat.bcn.vincles.mobile.Client.Model.UserRegister;
-//import cat.bcn.vincles.mobile.Client.Preferences.UserPreferences;
-//import cat.bcn.vincles.mobile.Client.Requests.GetAuthenticatedUserDataRequest;
-//import cat.bcn.vincles.mobile.Client.Requests.LoginRequest;
-//import cat.bcn.vincles.mobile.R;
-//import cat.bcn.vincles.mobile.UI.Alert.AlertMessage;
-//import cat.bcn.vincles.mobile.UI.Alert.AlertNonDismissable;
-//import cat.bcn.vincles.mobile.UI.Common.BaseActivity;
-//import cat.bcn.vincles.mobile.UI.FragmentManager.MainFragmentManagerActivity;
-//import cat.bcn.vincles.mobile.UI.RecoverPassword.RecoverPasswordActivity;
-//import cat.bcn.vincles.mobile.UI.Register.RegisterActivity;
-//import cat.bcn.vincles.mobile.UI.Splash.FragmentSplashScreen;
-//import cat.bcn.vincles.mobile.Utils.OtherUtils;
-
 public class LoginActivity extends BaseActivity implements View.OnClickListener,
         LoginRequest.OnResponse, AlertMessage.AlertMessageInterface, LoginDataDownloader.OnResult {
 

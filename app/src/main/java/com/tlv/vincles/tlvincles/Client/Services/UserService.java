@@ -65,7 +65,9 @@ public interface UserService {
     @PUT("/t/vincles-bcn.cat/vincles-services/1.0/users/me")
     public Call<JSONObject> updateUser(@Body JsonObject userRegister);
 
-    @GET("/t/vincles-bcn.cat/vincles-services/1.0/users/{userID}/photo")
+    // ok
+    // @GET("/t/vincles-bcn.cat/vincles-services/1.0/users/{userID}/photo")
+    @GET("/users/{userID}/photo")
     public Call<ResponseBody> getPhoto(@Path("userID") String userID);
 
     // ok

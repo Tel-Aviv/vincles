@@ -9,7 +9,7 @@
     android:paddingTop="@dimen/gallery_padding_top_bottom"
     android:paddingBottom="@dimen/gallery_padding_top_bottom"
     android:orientation="vertical"
-    tools:activity="cat.bcn.vincles.mobile.UI.ContentDetail.ContentDetailFragment">
+    tools:activity="com.tlv.vincles.tlvincles.UI.Contracts.AddContactFragment">
 
     <com.tlv.vincles.tlvincles.UI.Compound.BackCompoundView
         android:id="@+id/back"

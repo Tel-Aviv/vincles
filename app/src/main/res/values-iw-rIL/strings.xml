@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Vincles BCN</string>
     <string name="add_contacts_see_code_button">הצג את הקוד</string>
-    <string name="add_contacts_add_code_text">יש לי קוד קישור של משתמש אחר ואני רוצה להוסיף אותו</string>
+    <string name="add_contacts_add_code_text">יש לי קוד של משתמש אחר ואני רוצה להוסיף אותו</string>
     <string name="add_contacts_add_code_button">הוסף איש קשר</string>
     <string name="add_contacts_add_code_hint">הכנס את הקוד</string>
     <string name="add_contacts_add_code_error">הקוד לא יכול להיות ריק</string>
@@ -73,7 +73,7 @@
     <string name="calendar_month_thursday">ה\'</string>
     <string name="calendar_month_tuesday">ג\'</string>
     <string name="calendar_month_sunday">א\'</string>
-    <string name="calendar_month_wednesday">יום חמישי</string>
+    <string name="calendar_month_wednesday">ד\'</string>
     <string name="calendar_new_date_description">כתוב כאן את כותרת הפגישה</string>
     <string name="calendar_no_dates_this_day">אין לך פגישות ביום זה</string>
     <string name="calendar_not_going_date">אני לא אשתתף</string>
@@ -125,7 +125,7 @@
     <string name="chose_picture">בחר תמונה</string>
     <string name="close">סגור</string>
     <string name="close_session">להתנתק</string>
-    <string name="close_session_token_message">פג תוקף המושב.</string>
+    <string name="close_session_token_message">תוקף חיבור פג</string>
     <string name="config_bcn">אתה גר בברצלונה?</string>
     <string name="config_email">אימייל</string>
     <string name="config_firstname">שם פרטי</string>
@@ -156,12 +156,12 @@
     <string name="contacts">אנשי קשר</string>
     <string name="contacts_filter_all">ראה את כל אנשי קשר</string>
     <string name="contacts_filter_all_title">כל אנשי קשר</string>
-    <string name="contacts_filter_dynam">ראה את הדינמיזרים</string>
-    <string name="contacts_filter_dynam_title">ממריצים</string>
-    <string name="contacts_filter_family_friends">לראות משפחה וחברים</string>
+    <string name="contacts_filter_dynam">ראה את המתנדבים</string>
+    <string name="contacts_filter_dynam_title">מתנדבים</string>
+    <string name="contacts_filter_family_friends">" ראה משפחה וחברים"</string>
     <string name="contacts_filter_family_friends_title">משפחה וחברים</string>
     <string name="contacts_filter_groups">ראה קבוצות קישורים</string>
-    <string name="contacts_filter_groups_title">קישור קבוצות</string>
+    <string name="contacts_filter_groups_title">מעגלים</string>
     <string name="contacts_share_title">בחר אנשי קשר</string>
     <string name="context_help_calendar_create">על ידי לחיצה כאן תוכלו להוסיף אירועים ליומן ולהזמין כל אחד מאנשי הקשר שלכם.</string>
     <string name="context_help_calendar_month">בלחיצה כאן תוכלו לראות את כל החודש ולעיין בלוח השנה, להתייעץ עם פגישות אחרות בימים אחרים וליצור חדשים.</string>
@@ -242,7 +242,7 @@
     <string name="relationship_friend">חבר(ה)</string>
     <string name="relationship_grandchild">נכד(ה)</string>
     <string name="relationship_other">אחר</string>
-    <string name="relationship_partner">בת/בן זוג</string>
+    <string name="relationship_partner">בן זוג</string>
     <string name="relationship_volunteer">מתנדב</string>
     <string name="reminder_alert_title">תזכורות</string>
     <string name="remove_contacts">מחק איש קשר</string>
@@ -326,7 +326,7 @@
     <string name="login_loading_user_info">טוען פרטי המשתמש</string>
     <string name="media_shared_ko">לא ניתן היה לשתף תוכן</string>
     <string name="media_shared_ok">התוכן שותף בהצלחה</string>
-    <string name="no_contacts_group">אין לך עדיין קבוצות</string>
+    <string name="no_contacts_group">אין לך עדיין מעגלים</string>
     <string name="not_valid_date">השדה חובה</string>
     <string name="network_alert_text">אין לך קישוריות לרשת</string>
     <string name="menu_help">עזרה</string>
@@ -336,7 +336,18 @@
     <string name="error_default">שגיאה</string>
     <string name="error_code_generator_send">קוד הקישור שהזנת שגוי.</string>
     <string name="group_detail_send_invite_ok_title">בקשת יצירת קשר</string>
-    <string name="group_detail_send_invite_ok_message">בקשת יצירת הקשר שלך נשלחה בהצלחה</string>
+    <string name="group_detail_send_invite_ok_message">בקשת יצירת הקשר נשלחה בהצלחה</string>
+    <string-array name="add_contact_relationships">
+        <item>בן\\בת זוג</item>
+        <item>בן\\בת</item>
+        <item>נכד\\ה</item>
+        <item>חבר\\ה</item>
+        <item>מתנדב\\ת</item>
+        <item>מטפלת</item>
+        <item>אח\\ות</item>
+        <item>אחיין\\ית</item>
+        <item>אחר</item>
+    </string-array>
     <string name="group_detail_send_invite">שלח הזמנה</string>
     <string name="group_detail_resend_invite">הזמן משתמש</string>
     <string name="gallery_share_title">בחר את הקבצים</string>
@@ -345,4 +356,11 @@
     <string name="error_audio_busy">יישום נוסף הוא באמצעות המיקרופון. לא ניתן להקליט הודעת שמע בשלב זה.</string>
     <string name="error_afegir_contacte_no_network">לא ניתן היה להוסיף את איש הקשר. בבקשה נסה שוב מאוחר יותר.</string>
     <string name="error_2804">זיכרון מלא. מחק תוכן מהמכשיר שלך.</string>
+    <string name="gallery_no_content">אין עדיין תוכן להציג</string>
+    <string name="gallery_no_share">חזור ואל תשתף</string>
+    <string name="gallery_max_items">ניתן לשתף עד 10 פריטים</string>
+    <string name="error_1112">שם המשתמש נמצא כבר בשימוש</string>
+    <string name="error_1113">טלפון הוא שדה חובה</string>
+    <string name="context_help_gallery_new_photo">בלחיצה כאן תוכלו לצלם תמונות שיתווספו לגלריה שלכם.</string>
+    <string name="context_help_gallery_new_video">בלחיצה כאן תוכלו ליצור סרטונים שיתווספו לגלריה שלכם.</string>
 </resources>

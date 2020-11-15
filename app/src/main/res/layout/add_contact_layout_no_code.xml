@@ -9,7 +9,7 @@
     android:paddingTop="@dimen/gallery_padding_top_bottom"
     android:paddingBottom="@dimen/gallery_padding_top_bottom"
     android:orientation="vertical"
-    tools:activity="com.tlv.vincles.tlvincles.UI.Contracts.AddContactFragment">
+    tools:activity="cat.bcn.vincles.mobile.UI.ContentDetail.ContentDetailFragment">
 
     <com.tlv.vincles.tlvincles.UI.Compound.BackCompoundView
         android:id="@+id/back"
@@ -20,96 +20,27 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
 
-
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/contacts_add_sections_margin"
-        android:layout_marginBottom="@dimen/contacts_add_sections_margin"
+        android:layout_height="0dp"
         android:layout_weight="1">
-
-        <LinearLayout
-            android:id="@+id/see_code_ll"
-            android:orientation="vertical"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:background="@color/grayClear1"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:paddingLeft="@dimen/contacts_add_in_blocks_margin_sides"
-            android:paddingRight="@dimen/contacts_add_in_blocks_margin_sides"
-            android:paddingTop="@dimen/contacts_add_in_blocks_margin_up_down"
-            android:paddingBottom="@dimen/contacts_add_in_blocks_margin_up_down"
-            android:layout_marginRight="@dimen/contacts_add_between_blocks_margin"
-            android:clickable="true">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="@string/add_contacts_see_code_text"
-                android:textColor="@color/colorBlack"
-                android:textSize="@dimen/contacts_add_text_size"
-                android:layout_marginBottom="@dimen/contacts_add_between_blocks_margin" />
-
-            <LinearLayout
-                android:id="@+id/see_code_button"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/contacts_add_blocks_button_height"
-                android:background="@drawable/selector_buttons_background"
-                android:gravity="center"
-                android:clickable="true">
-
-                <ImageView
-                    android:layout_width="@dimen/image_bottom_with_text_size"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="@dimen/image_bottom_with_text_margin_right"
-                    android:src="@drawable/selector_filter_button" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/add_contacts_see_code_button"
-                    android:textColor="@color/selector_text_red_white"
-                    android:textSize="@dimen/main_bottom_rows_text_size"/>
-
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/see_code_textview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:visibility="gone"
-                android:text="code"
-                android:textColor="@color/colorBlack"
-                android:textSize="@dimen/contacts_add_code_text_size"
-                android:layout_marginTop="@dimen/contacts_add_between_blocks_margin"
-                android:src="@drawable/filter" />
-
-        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/add_contact_ll"
             android:orientation="vertical"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/add_contact_layout_no_code_heignt"
             android:background="@color/grayClear1"
             android:gravity="center"
             android:paddingLeft="@dimen/contacts_add_in_blocks_margin_sides"
             android:paddingRight="@dimen/contacts_add_in_blocks_margin_sides"
-            android:paddingTop="@dimen/contacts_add_in_blocks_margin_up_down"
-            android:paddingBottom="@dimen/contacts_add_in_blocks_margin_up_down"
-            android:layout_weight="1"
-            android:clickable="true">
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="@dimen/gallery_padding_top_bottom"
+            android:layout_marginTop="@dimen/gallery_padding_top_bottom"
+            android:clickable="true"
+            android:focusable="true">
 
             <TextView
-                android:id="@+id/add_contact_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -118,8 +49,6 @@
                 android:textColor="@color/colorBlack"
                 android:textSize="@dimen/contacts_add_text_size"
                 android:layout_marginBottom="@dimen/contacts_add_between_blocks_margin" />
-
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -139,21 +68,21 @@
                     android:lines="1"
                     android:layout_weight="2"
                     android:maxLines="1"
-                    android:paddingRight="@dimen/contacts_add_between_blocks_margin"
+                    android:paddingEnd="@dimen/contacts_add_between_blocks_margin"
+                    android:paddingStart="@dimen/contacts_add_between_blocks_margin"
                     android:textSize="@dimen/contacts_add_text_size"
-                    android:layout_marginRight="5dp" />
+                    android:layout_marginEnd="5dp" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
                     android:background="@color/colorWhite"
-                    android:layout_marginLeft="5dp">
+                    android:layout_marginStart="5dp">
                     <Spinner
                         android:id="@+id/relationship_spinner"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" />
+                        android:layout_height="match_parent" />
                 </RelativeLayout>
 
 
@@ -166,13 +95,14 @@
                 android:layout_height="@dimen/contacts_add_blocks_button_height"
                 android:background="@drawable/selector_buttons_background"
                 android:gravity="center"
-                android:clickable="true">
+                android:clickable="true"
+                android:focusable="true">
 
                 <ImageView
                     android:layout_width="@dimen/image_bottom_with_text_size"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginRight="@dimen/image_bottom_with_text_margin_right"
+                    android:layout_marginEnd="@dimen/image_bottom_with_text_margin_right"
                     android:src="@drawable/selector_check_background" />
 
                 <TextView
@@ -187,10 +117,7 @@
 
         </LinearLayout>
 
-    </LinearLayout>
-
-
-
+    </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/cancel"
@@ -199,14 +126,14 @@
         android:layout_height="@dimen/contacts_add_bottom_buttons_height"
         android:background="@drawable/selector_buttons_background"
         android:gravity="center"
-        android:layout_weight="0"
-        android:clickable="true">
+        android:clickable="true"
+        android:focusable="true">
 
         <ImageView
             android:layout_width="@dimen/image_bottom_with_text_size"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginRight="@dimen/image_bottom_with_text_margin_right"
+            android:layout_marginEnd="@dimen/image_bottom_with_text_margin_right"
             android:src="@drawable/selector_no_eliminar_background" />
 
         <TextView

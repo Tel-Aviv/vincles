@@ -31,18 +31,19 @@ public class PostDataUsageRequest extends BaseRequest implements Callback<Respon
     }
 
     public void doRequest(String accessToken) {
-        authenticatedRequest(accessToken);
-        consumeCreatedTime = dataUsage.getDate();
-        userService = retrofit.create(UserService.class);
-        Call<ResponseBody> call = userService.postDataUsage(dataUsage);
-
-        try{
-            ((String[])call.request().tag())[0] = this.getClass().getSimpleName();
-        }catch (Exception e){
-            Log.e("TAG", this.getClass().getSimpleName() + " Put request Tag error");
-        }
-
-        call.enqueue(this);
+// ok
+//        authenticatedRequest(accessToken);
+//        consumeCreatedTime = dataUsage.getDate();
+//        userService = retrofit.create(UserService.class);
+//        Call<ResponseBody> call = userService.postDataUsage(dataUsage);
+//
+//        try{
+//            ((String[])call.request().tag())[0] = this.getClass().getSimpleName();
+//        }catch (Exception e){
+//            Log.e("TAG", this.getClass().getSimpleName() + " Put request Tag error");
+//        }
+//
+//        call.enqueue(this);
     }
 
     public void addOnOnResponse(OnResponse onResponse) {

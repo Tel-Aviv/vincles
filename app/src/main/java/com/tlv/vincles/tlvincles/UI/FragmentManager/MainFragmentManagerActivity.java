@@ -12,17 +12,7 @@ import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-//import android.support.annotation.NonNull;
-//import android.support.design.widget.NavigationView;
-//import android.support.v4.app.Fragment;
-//import android.support.v4.app.FragmentManager;
-//import android.support.v4.app.FragmentTransaction;
-//import android.support.v4.content.LocalBroadcastManager;
-//import android.support.v4.view.GravityCompat;
-//import android.support.v4.widget.DrawerLayout;
-//import android.support.v7.app.ActionBar;
-//import android.support.v7.app.ActionBarDrawerToggle;
-//import android.support.v7.widget.Toolbar;
+
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.MenuItem;
@@ -190,7 +180,8 @@ public class MainFragmentManagerActivity extends BaseActivity
             recreate();
         }
 
-        alertsManager = new AlertsManager(this, savedInstanceState);
+        // ok
+//        alertsManager = new AlertsManager(this, savedInstanceState);
 
         setContentView(R.layout.activity_main_fragment_manager);
 
@@ -230,9 +221,10 @@ public class MainFragmentManagerActivity extends BaseActivity
 //        final TextView usernameTV = navigationView.getHeaderView(0).findViewById(R.id.header_textview);
 //        usernameTV.setText(userPreferences.getName());
 
-        if (savedInstanceState == null) {
-            askForRating();
-        }
+        // ok
+//        if (savedInstanceState == null) {
+//            askForRating();
+//        }
 
         if (savedInstanceState == null) {
             Fragment fragment = HomeFragment.newInstance(this);
@@ -278,9 +270,11 @@ public class MainFragmentManagerActivity extends BaseActivity
             mMyApp = (MyApplication) this.getApplicationContext();
         }
 
-        if (alertsManager != null) alertsManager.start();
+        if (alertsManager != null)
+            alertsManager.start();
 
-        startNotificationsManager();
+        // ok
+//        startNotificationsManager();
 
         LoginActivity.screenOrientation = this.getResources().getConfiguration().orientation;
         mMyApp.setCurrentActivity(this);
@@ -299,7 +293,8 @@ public class MainFragmentManagerActivity extends BaseActivity
             e.printStackTrace();
         }
 
-        if (alertsManager != null) alertsManager.restartMeetingRunnable();
+        if (alertsManager != null)
+            alertsManager.restartMeetingRunnable();
 
         if (MyApplication.isPendingMissedCallBroadcast()) {
             MyApplication.setPendingMissedCallBroadcast(false);
@@ -355,7 +350,8 @@ public class MainFragmentManagerActivity extends BaseActivity
         super.onSaveInstanceState(bundle);
         bundle.putInt("currentScreen", currentScreen);
         bundle.putInt("screenOrientation",LoginActivity.screenOrientation);
-        if (alertsManager != null) alertsManager.onSaveInstanceState(bundle);
+        if (alertsManager != null)
+            alertsManager.onSaveInstanceState(bundle);
     }
 
     public void updateAvatar() {
@@ -763,7 +759,8 @@ public class MainFragmentManagerActivity extends BaseActivity
             case "MEETING_INVITATION_ADDED_EVENT":
             case "MEETING_DELETED_EVENT":
             case NotificationsDb.MEETING_REMINDER_NOTIFICATION_TYPE:
-                alertsManager.restartMeetingRunnable();
+                if( alertsManager != null )
+                    alertsManager.restartMeetingRunnable();
                 break;
 
         }
@@ -772,7 +769,8 @@ public class MainFragmentManagerActivity extends BaseActivity
 
     @Override
     public void onMeetingCreatedOrUpdated() {
-        alertsManager.restartMeetingRunnable();
+        if( alertsManager != null )
+            alertsManager.restartMeetingRunnable();
     }
 
 //    @Override
@@ -1080,45 +1078,45 @@ public class MainFragmentManagerActivity extends BaseActivity
 
     }
 
-    private RateMeMaybe rmm;
-    private void askForRating() {
-
-        try {
-            this.rmm = new RateMeMaybe(this);
-            this.rmm.setIcon(0);
-
-            this.rmm.setServiceUrl(Environment.getRateMeUrl());
-            //rmm.forceShow();
-            this.rmm.setAdditionalListener(new RateMeMaybe.OnRMMUserChoiceListener() {
-                @Override
-                public void handlePositive() {
-                    Log.d("CV", "+");
-                }
-
-                @Override
-                public void handleNeutral() {
-                    Log.d("CV", "0");
-                }
-
-                @Override
-                public void handleNegative() {
-                    Log.d("CV", "-");
-                }
-
-                @Override
-                public void handleError() {
-                    Log.d("CV", "err");
-                }
-            });
-            this.rmm.run();
-            //this.rmm.forceShow();
-        } catch (IllegalStateException ignored) {
-
-            Log.e("RateMeMaybe", "Unable to perform action while saveInstanceState is performed");
-        }
-
-
-    }
+//    private RateMeMaybe rmm;
+//    private void askForRating() {
+//
+//        try {
+//            this.rmm = new RateMeMaybe(this);
+//            this.rmm.setIcon(0);
+//
+//            this.rmm.setServiceUrl(Environment.getRateMeUrl());
+//            //rmm.forceShow();
+//            this.rmm.setAdditionalListener(new RateMeMaybe.OnRMMUserChoiceListener() {
+//                @Override
+//                public void handlePositive() {
+//                    Log.d("CV", "+");
+//                }
+//
+//                @Override
+//                public void handleNeutral() {
+//                    Log.d("CV", "0");
+//                }
+//
+//                @Override
+//                public void handleNegative() {
+//                    Log.d("CV", "-");
+//                }
+//
+//                @Override
+//                public void handleError() {
+//                    Log.d("CV", "err");
+//                }
+//            });
+//            this.rmm.run();
+//            //this.rmm.forceShow();
+//        } catch (IllegalStateException ignored) {
+//
+//            Log.e("RateMeMaybe", "Unable to perform action while saveInstanceState is performed");
+//        }
+//
+//
+//    }
 
     private void versionControl() {
 

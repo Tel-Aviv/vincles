@@ -27,7 +27,11 @@ import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent;
 import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEventListener;
 
 
-public class AddContactFragment extends Fragment implements View.OnClickListener, AddContactView, AlertMessage.AlertMessageInterface, ContactAddedAlert.AddContactDialogCallback {
+public class AddContactFragment extends Fragment
+        implements View.OnClickListener,
+                    AddContactView,
+                    AlertMessage.AlertMessageInterface,
+                    ContactAddedAlert.AddContactDialogCallback {
 
     private AddContactPresenterContract presenter;
     private EditText codeEditText;
@@ -62,8 +66,8 @@ public class AddContactFragment extends Fragment implements View.OnClickListener
     public void onResume() {
         super.onResume();
 
-        OtherUtils.sendAnalyticsView(getActivity(),
-                getResources().getString(R.string.tracking_add_contact));
+//        OtherUtils.sendAnalyticsView(getActivity(),
+//                getResources().getString(R.string.tracking_add_contact));
     }
 
     @Override
@@ -82,15 +86,19 @@ public class AddContactFragment extends Fragment implements View.OnClickListener
                              Bundle savedInstanceState) {
 
         final View v;
-        if (new UserPreferences().getIsUserSenior()) {
-            v = inflater.inflate(R.layout.add_contact_layout, container, false);
-            v.findViewById(R.id.see_code_button).setOnClickListener(this);
-        } else {
-            v = inflater.inflate(R.layout.add_contact_layout_no_code, container, false);
-        }
+
+        v = inflater.inflate(R.layout.add_contact_layout, container, false);
+        v.findViewById(R.id.see_code_button).setOnClickListener(this);
+
+//        if (new UserPreferences().getIsUserSenior()) {
+//            v = inflater.inflate(R.layout.add_contact_layout, container, false);
+//            v.findViewById(R.id.see_code_button).setOnClickListener(this);
+//        } else {
+//            v = inflater.inflate(R.layout.add_contact_layout_no_code, container, false);
+//        }
         v.findViewById(R.id.back).setOnClickListener(this);
         v.findViewById(R.id.add_contact_button).setOnClickListener(this);
-
+//
         this.relationshipSpinner = v.findViewById(R.id.relationship_spinner);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this.getActivity(), R.array.add_contact_relationships, android.R.layout.simple_spinner_item);
@@ -98,46 +106,46 @@ public class AddContactFragment extends Fragment implements View.OnClickListener
         this.relationshipSpinner.setAdapter(adapter);
 
         cancel = v.findViewById(R.id.cancel);
-        cancel.setOnClickListener(this);
+        cancel.setOnClickListener(view -> getParentFragmentManager().popBackStack());
         codeEditText = v.findViewById(R.id.add_contact_code_et);
         codeTextView = v.findViewById(R.id.see_code_textview);
-        seeCodeLayout = v.findViewById(R.id.see_code_ll);
-
-        if (code != null) codeEditText.setText(code);
-
-        if (getActivity() != null) {
-            KeyboardVisibilityEvent.setEventListener(
-                    getActivity(),
-                    new KeyboardVisibilityEventListener() {
-                        @Override
-                        public void onVisibilityChanged(boolean isOpen) {
-                            if (getActivity() != null && isAdded()) {
-                                DisplayMetrics dm = getResources().getDisplayMetrics();
-                                boolean isLandscape = dm.widthPixels > dm.heightPixels;
-                                boolean isTablet = getResources().getBoolean(R.bool.isTablet);
-
-                                // some code depending on keyboard visibility status 
-                                if (seeCodeLayout != null) seeCodeLayout.setVisibility(isOpen && (isTablet
-                                        || !isLandscape) ? View.GONE : View.VISIBLE);
-                                if (cancel != null) {
-                                    cancel.setVisibility(isOpen && isLandscape ? View.GONE : View.VISIBLE);
-                                }
-
-                                View addContactButton = v.findViewById(R.id.add_contact_button);
-                                if (addContactButton != null) addContactButton.setVisibility(isOpen
-                                        && isTablet && isLandscape ? View.GONE : View.VISIBLE);
-
-                                View addContactTV = v.findViewById(R.id.add_contact_tv);
-                                if (addContactTV != null) addContactTV.setVisibility(isOpen
-                                        && isTablet && isLandscape ? View.GONE : View.VISIBLE);
-
-                                View cancelButton = v.findViewById(R.id.cancel);
-                                if (cancelButton != null) cancelButton.setVisibility(isOpen
-                                        && !isTablet ? View.GONE : View.VISIBLE);
-                            }
-                        }
-                    });
-        }
+//        seeCodeLayout = v.findViewById(R.id.see_code_ll);
+//
+//        if (code != null) codeEditText.setText(code);
+// ok
+//        if (getActivity() != null) {
+//            KeyboardVisibilityEvent.setEventListener(
+//                    getActivity(),
+//                    new KeyboardVisibilityEventListener() {
+//                        @Override
+//                        public void onVisibilityChanged(boolean isOpen) {
+//                            if (getActivity() != null && isAdded()) {
+//                                DisplayMetrics dm = getResources().getDisplayMetrics();
+//                                boolean isLandscape = dm.widthPixels > dm.heightPixels;
+//                                boolean isTablet = getResources().getBoolean(R.bool.isTablet);
+//
+//                                // some code depending on keyboard visibility status 
+//                                if (seeCodeLayout != null) seeCodeLayout.setVisibility(isOpen && (isTablet
+//                                        || !isLandscape) ? View.GONE : View.VISIBLE);
+//                                if (cancel != null) {
+//                                    cancel.setVisibility(isOpen && isLandscape ? View.GONE : View.VISIBLE);
+//                                }
+//
+//                                View addContactButton = v.findViewById(R.id.add_contact_button);
+//                                if (addContactButton != null) addContactButton.setVisibility(isOpen
+//                                        && isTablet && isLandscape ? View.GONE : View.VISIBLE);
+//
+//                                View addContactTV = v.findViewById(R.id.add_contact_tv);
+//                                if (addContactTV != null) addContactTV.setVisibility(isOpen
+//                                        && isTablet && isLandscape ? View.GONE : View.VISIBLE);
+//
+//                                View cancelButton = v.findViewById(R.id.cancel);
+//                                if (cancelButton != null) cancelButton.setVisibility(isOpen
+//                                        && !isTablet ? View.GONE : View.VISIBLE);
+//                            }
+//                        }
+//                    });
+//        }
 
         return v;
     }
@@ -158,17 +166,20 @@ public class AddContactFragment extends Fragment implements View.OnClickListener
                 break;
             case R.id.add_contact_button:
                 generating = false;
-                String[] relationships = {"PARTNER", "CHILD", "GRANDCHILD", "FRIEND", "VOLUNTEER", "CAREGIVER", "SIBLING", "NEPHEW", "OTHER"};
-                presenter.onAddContactClicked(codeEditText.getText().toString(), relationships[this.relationshipSpinner.getSelectedItemPosition()]);
+                //String[] relationships = {"PARTNER", "CHILD", "GRANDCHILD", "FRIEND", "VOLUNTEER", "CAREGIVER", "SIBLING", "NEPHEW", "OTHER"};
+                String relation = this.relationshipSpinner.getSelectedItem().toString();
+                //presenter.onAddContactClicked(codeEditText.getText().toString(), relationships[this.relationshipSpinner.getSelectedItemPosition()]);
+                presenter.onAddContactClicked(codeEditText.getText().toString(), relation);
                 break;
         }
     }
 
-
     @Override
     public void showCode(String code) {
-        codeTextView.setText(code);
-        codeTextView.setVisibility(View.VISIBLE);
+        if( codeTextView != null ) {
+            codeTextView.setText(code);
+            codeTextView.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override

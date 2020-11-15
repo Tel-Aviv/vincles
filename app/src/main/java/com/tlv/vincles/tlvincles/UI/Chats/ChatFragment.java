@@ -160,15 +160,15 @@ public class ChatFragment extends BaseFragment implements ChatFragmentView, View
         this.savedInstanceState = savedInstanceState;
 
         ChatRepository chatRepository;
-        if(getFragmentManager()==null){
+        if(getParentFragmentManager()==null){
             return;
         }
-        Fragment repo = getFragmentManager().findFragmentByTag(REPOSITORY_FRAGMENT_TAG);
+        Fragment repo = getParentFragmentManager().findFragmentByTag(REPOSITORY_FRAGMENT_TAG);
         if (repo instanceof ChatRepository) {
             chatRepository = (ChatRepository) repo;
         } else {
             chatRepository = null;
-            getFragmentManager().beginTransaction().remove(repo);
+            getParentFragmentManager().beginTransaction().remove(repo);
         }
 
         if (chatRepository != null && savedInstanceState == null) {

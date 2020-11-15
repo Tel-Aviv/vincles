@@ -156,7 +156,7 @@
     <string name="contacts">Contacts</string>
     <string name="contacts_filter_all">See all contacts</string>
     <string name="contacts_filter_all_title">All contacts</string>
-    <string name="contacts_filter_dynam">See the dynamizers</string>
+    <string name="contacts_filter_dynam">See the voluntaries</string>
     <string name="contacts_filter_dynam_title">Invigorators</string>
     <string name="contacts_filter_family_friends">See family and friends</string>
     <string name="contacts_filter_family_friends_title">Family and friends</string>
@@ -345,4 +345,10 @@
     <string name="error_audio_busy">Another application is using the microphone. Unable to record audio message at this time.</string>
     <string name="error_afegir_contacte_no_network">The contact could not be added. Please try again later.</string>
     <string name="error_2804">Full memory. Please delete content from your device.</string>
+    <string name="gallery_no_content">No content</string>
+    <string name="gallery_no_share">Return and do not share</string>
+    <string name="error_1112">Username is in use</string>
+    <string name="error_1113">Phone is required field</string>
+    <string name="context_help_gallery_new_photo">By clicking here, you can take photos that will be added to your gallery.</string>
+    <string name="context_help_gallery_new_video">By clicking here, you will be able to create videos that will be added to your gallery.</string>
 </resources>

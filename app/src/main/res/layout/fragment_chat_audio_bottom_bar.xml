@@ -10,26 +10,15 @@
         android:layout_width="wrap_content"
         android:layout_height="@dimen/gallery_bottom_buttons_height"
         android:gravity="center"
-        android:layout_marginEnd="@dimen/content_detail_bottom_buttons_margin_half" >
+        android:layout_marginRight="@dimen/content_detail_bottom_buttons_margin_half" >
 
         <ImageView
-            android:id="@+id/cancel_iv"
+            android:id="@+id/textImageView"
             android:layout_width="@dimen/chat_write_bar_icon_size"
             android:layout_height="@dimen/chat_write_bar_icon_size"
             android:src="@drawable/selector_close_dialog_background" />
 
-        <TextView
-            android:id="@+id/cancel_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="@dimen/content_detail_date_inner_margins"
-            android:text="@string/cancel"
-            android:textColor="@color/selector_text_red_white"
-            android:textSize="@dimen/content_detail_help_text_size" />
-
     </LinearLayout>
-
 
     <RelativeLayout
         android:id="@+id/recording_rl"
@@ -72,7 +61,7 @@
             android:fontFamily="@font/akkurat"
             android:textSize="@dimen/chat_element_message_time_text_size"
             android:layout_above="@+id/progressbar"
-            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:text="00:00" />
 
         <ProgressBar
@@ -84,30 +73,19 @@
 
     </RelativeLayout>
 
-
     <LinearLayout
         android:id="@+id/send_audio"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/gallery_bottom_buttons_height"
         android:gravity="center"
-        android:layout_marginStart="@dimen/content_detail_bottom_buttons_margin_half" >
+        android:layout_marginLeft="@dimen/content_detail_bottom_buttons_margin_half" >
 
         <ImageView
-            android:id="@+id/send_iv"
+            android:id="@+id/file_iv"
             android:layout_width="@dimen/chat_write_bar_icon_size"
             android:layout_height="@dimen/chat_write_bar_icon_size"
             android:layout_gravity="center"
             android:src="@drawable/selector_stop_button"/>
-
-        <TextView
-            android:id="@+id/send_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="@dimen/content_detail_date_inner_margins"
-            android:text="@string/chat_stop_audio"
-            android:textColor="@color/selector_text_red_white"
-            android:textSize="@dimen/content_detail_help_text_size" />
 
     </LinearLayout>
 </LinearLayout>

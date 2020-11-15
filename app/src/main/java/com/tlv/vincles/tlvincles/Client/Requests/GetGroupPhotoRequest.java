@@ -62,7 +62,13 @@ public class GetGroupPhotoRequest extends BaseRequest implements Callback<Respon
                         new Thread(new Runnable() {
                             @Override
                             public void run() {
-                                r.onResponseGetGroupPhotoRequest(ImageUtils.saveFile(response.body().byteStream()), groupId, viewID);
+                                try {
+                                    r.onResponseGetGroupPhotoRequest(ImageUtils.saveFile(response.body().byteStream()), groupId, viewID);
+                                }
+                                catch(Exception ex)
+                                {
+                                    Log.e(this.getClass().getName(), ex.getLocalizedMessage());
+                                }
                             /*InputStream is = response.body().byteStream();
                             Bitmap bm = BitmapFactory.decodeStream(is);
                             r.onResponseGetUserPhotoRequest(bm, userID, viewID);*/

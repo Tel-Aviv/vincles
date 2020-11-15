@@ -38,8 +38,6 @@ import com.tlv.vincles.tlvincles.Utils.Constants;
 import com.tlv.vincles.tlvincles.Utils.MyApplication;
 
 import static com.tlv.vincles.tlvincles.Utils.MyApplication.getAppContext;
-//
-//import static cat.bcn.vincles.mobile.Utils.MyApplication.getAppContext;
 
 public abstract class BaseActivity extends AppCompatActivity implements AlertMessage.AlertMessageInterface, MyApplication.AppInterface, VersionControlAlert.ControlVersionInterface {
 

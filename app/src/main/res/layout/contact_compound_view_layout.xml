@@ -18,7 +18,7 @@
         android:layout_marginRight="@dimen/main_contact_padding_icon"
         android:layout_marginBottom="@dimen/main_contact_padding_smaller">
 
-        <cat.bcn.vincles.mobile.UI.Home.SquareRoundedImageView
+        <com.tlv.vincles.tlvincles.UI.Home.SquareRoundedImageView
             android:id="@+id/contact_avatar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -41,12 +41,12 @@
             android:id="@+id/notifications_number"
             android:layout_width="@dimen/contacts_icon_number_size"
             android:layout_height="@dimen/contacts_icon_number_size"
-            android:layout_gravity="top|right"
+            android:layout_gravity="top|end"
             android:background="@drawable/number_meetings_background"
             android:fontFamily="@font/akkurat"
             android:gravity="center"
             android:text=""
-            android:layout_alignRight="@+id/contact_avatar"
+            android:layout_alignEnd="@+id/contact_avatar"
             android:layout_alignTop="@+id/contact_avatar"
             android:textColor="@color/colorWhite"
             android:textSize="@dimen/contacts_icon_number_text_size"/>

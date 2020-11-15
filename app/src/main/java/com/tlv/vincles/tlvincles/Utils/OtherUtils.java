@@ -512,12 +512,11 @@ public class OtherUtils {
         String ns = Context.NOTIFICATION_SERVICE;
         NotificationManager nMgr = (NotificationManager) appContext.getSystemService(ns);
         if (nMgr != null) {
-            Log.d("cancelProcessing", "es cancela la noti");
+            Log.d("cancelProcessing", "Cancel Notification Processing");
             nMgr.cancelAll();
         }
 
     }
-
 
     public static String getBaseHostName() {
         String[] parts = com.tlv.vincles.tlvincles.Client.Environment.Environment.getApiBaseUrl().split("//");

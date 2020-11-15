@@ -50,7 +50,9 @@ import com.tlv.vincles.tlvincles.R;
 //import org.apache.commons.io.FileUtils;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -59,6 +61,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.nio.channels.FileChannel;
 import java.text.SimpleDateFormat;
@@ -214,17 +217,42 @@ public class ImageUtils {
                 + UUID.randomUUID().toString().substring(0, 7);
     }
 
-    public static Uri saveFile(InputStream data) {
+    public static Uri saveFile(InputStream is) throws Exception {
+
         ContextWrapper wrapper = new ContextWrapper(MyApplication.getAppContext());
-        File file = wrapper.getDir("Images",MODE_PRIVATE);
+        File file = wrapper.getDir("Images", MODE_PRIVATE);
         file = new File(file, generateUniqueFileName() +".jpg");
-        try {
-            FileUtils.copyInputStreamToFile(data, file);
-        } catch (IOException e) {
-            e.printStackTrace();
+
+        InputStreamReader isReader = new InputStreamReader(is);
+        BufferedReader reader = new BufferedReader(isReader);
+        StringBuffer sb = new StringBuffer();
+        String str;
+        while ((str = reader.readLine()) != null) {
+            sb.append(str);
         }
+
+        byte[] bytes = Base64.decode(sb.toString(), Base64.DEFAULT);
+
+        FileOutputStream fos = new FileOutputStream(file);
+        fos.write(bytes);
+        fos.close();
+
         return Uri.fromFile(file);
+
     }
+
+//    public static Uri saveFile(InputStream is) {
+//
+//        ContextWrapper wrapper = new ContextWrapper(MyApplication.getAppContext());
+//        File file = wrapper.getDir("Images",MODE_PRIVATE);
+//        file = new File(file, generateUniqueFileName() +".jpg");
+//        try {
+//            FileUtils.copyInputStreamToFile(is, file);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        return Uri.fromFile(file);
+//    }
 
     public static Uri saveFile(Context context, Bitmap image) {
 

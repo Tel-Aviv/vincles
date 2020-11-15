@@ -59,8 +59,14 @@ public class GetMeetingUserPhotoRequest extends BaseRequest implements Callback<
                         new Thread(new Runnable() {
                             @Override
                             public void run() {
-                                r.onResponseGetMeetingUserPhotoRequest(ImageUtils.saveFile(
-                                        response.body().byteStream()), userID);
+                                try {
+                                    r.onResponseGetMeetingUserPhotoRequest(ImageUtils.saveFile(
+                                            response.body().byteStream()), userID);
+                                }
+                                catch (Exception ex)
+                                {
+                                    Log.e(this.getClass().getName(), ex.getLocalizedMessage());
+                                }
                             /*InputStream is = response.body().byteStream();
                             Bitmap bm = BitmapFactory.decodeStream(is);
                             r.onResponseGetUserPhotoRequest(bm, userID, viewID);*/

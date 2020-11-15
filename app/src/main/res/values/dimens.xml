@@ -72,7 +72,7 @@
 
     <dimen name="main_screen_see_contacts_separation">2dp</dimen>
     <dimen name="main_screen_see_contacts_margin_in">4dp</dimen>
-
+    <dimen name="main_screen_item_margin">2dp</dimen>
 
     <!--GALLERY-->
     <dimen name="gallery_padding_sides">24dp</dimen>

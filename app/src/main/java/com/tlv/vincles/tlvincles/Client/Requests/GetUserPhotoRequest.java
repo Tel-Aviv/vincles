@@ -8,6 +8,9 @@ import com.tlv.vincles.tlvincles.Client.Errors.ErrorHandler;
 import com.tlv.vincles.tlvincles.Client.Services.UserService;
 import com.tlv.vincles.tlvincles.Utils.ImageUtils;
 
+import org.apache.commons.io.IOUtils;
+
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,9 +68,14 @@ public class GetUserPhotoRequest extends BaseRequest implements Callback<Respons
                         new Thread(new Runnable() {
                             @Override
                             public void run() {
-                                long size = response.body().contentLength();
-                                r.onResponseGetUserPhotoRequest(ImageUtils.saveFile(
-                                        response.body().byteStream()), userID, viewID, contactType);
+                                //long size = response.body().contentLength();
+                                try {
+                                    r.onResponseGetUserPhotoRequest(ImageUtils.saveFile(response.body().byteStream()), userID, viewID, contactType);
+                                }
+                                catch(Exception ex)
+                                {
+                                    Log.e(this.getClass().getName(), ex.getLocalizedMessage());
+                                }
                             /*InputStream is = response.body().byteStream();
                             Bitmap bm = BitmapFactory.decodeStream(is);
                             r.onResponseGetUserPhotoRequest(bm, userID, viewID);*/

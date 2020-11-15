@@ -9,7 +9,7 @@
     android:paddingTop="@dimen/gallery_padding_top_bottom"
     android:paddingBottom="@dimen/gallery_padding_top_bottom"
     android:orientation="vertical"
-    tools:activity="cat.bcn.vincles.mobile.UI.ContentDetail.ContentDetailFragment">
+    tools:activity="com.tlv.vincles.tlvincles.UI.Contracts.AddContactFragment">
 
     <com.tlv.vincles.tlvincles.UI.Compound.BackCompoundView
         android:id="@+id/back"
@@ -31,7 +31,8 @@
         android:paddingRight="@dimen/contacts_add_in_blocks_margin_sides"
         android:layout_marginTop="@dimen/contacts_add_between_blocks_margin"
         android:layout_marginBottom="@dimen/contacts_add_between_blocks_margin"
-        android:clickable="true">
+        android:clickable="true"
+        android:focusable="true">
 
         <TextView
             android:layout_width="match_parent"
@@ -50,13 +51,14 @@
             android:layout_height="@dimen/contacts_add_blocks_button_height"
             android:background="@drawable/selector_buttons_background"
             android:gravity="center"
-            android:clickable="true">
+            android:clickable="true"
+            android:focusable="true">
 
             <ImageView
                 android:layout_width="@dimen/image_bottom_with_text_size"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginRight="@dimen/image_bottom_with_text_margin_right"
+                android:layout_marginEnd="@dimen/image_bottom_with_text_margin_right"
                 android:src="@drawable/selector_filter_button" />
 
             <TextView
@@ -95,13 +97,16 @@
         android:paddingRight="@dimen/contacts_add_in_blocks_margin_sides"
         android:layout_marginBottom="@dimen/contacts_add_between_blocks_margin"
         android:layout_weight="1"
-        android:clickable="true">
+        android:clickable="true"
+        android:focusable="true">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
+            android:maxLines="2"
+            android:lines="2"
             android:text="@string/add_contacts_add_code_text"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/contacts_add_text_size"
@@ -125,21 +130,21 @@
                 android:lines="1"
                 android:layout_weight="2"
                 android:maxLines="1"
-                android:paddingRight="@dimen/contacts_add_between_blocks_margin"
+                android:paddingStart="@dimen/contacts_add_between_blocks_margin"
+                android:paddingEnd="@dimen/contacts_add_between_blocks_margin"
                 android:textSize="@dimen/contacts_add_text_size"
-                android:layout_marginRight="5dp" />
+                android:layout_marginEnd="5dp" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:background="@color/colorWhite"
-                android:layout_marginLeft="5dp">
+                android:layout_marginStart="5dp">
                 <Spinner
                     android:id="@+id/relationship_spinner"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1" />
+                    android:layout_height="match_parent" />
             </RelativeLayout>
 
 
@@ -152,13 +157,14 @@
             android:layout_height="@dimen/contacts_add_blocks_button_height"
             android:background="@drawable/selector_buttons_background"
             android:gravity="center"
-            android:clickable="true">
+            android:clickable="true"
+            android:focusable="true">
 
             <ImageView
                 android:layout_width="@dimen/image_bottom_with_text_size"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginRight="@dimen/image_bottom_with_text_margin_right"
+                android:layout_marginEnd="@dimen/image_bottom_with_text_margin_right"
                 android:src="@drawable/selector_check_background" />
 
             <TextView
@@ -182,13 +188,14 @@
         android:background="@drawable/selector_buttons_background"
         android:gravity="center"
         android:layout_weight="0"
-        android:clickable="true">
+        android:clickable="true"
+        android:focusable="true">
 
         <ImageView
             android:layout_width="@dimen/image_bottom_with_text_size"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginRight="@dimen/image_bottom_with_text_margin_right"
+            android:layout_marginEnd="@dimen/image_bottom_with_text_margin_right"
             android:src="@drawable/selector_no_eliminar_background" />
 
         <TextView

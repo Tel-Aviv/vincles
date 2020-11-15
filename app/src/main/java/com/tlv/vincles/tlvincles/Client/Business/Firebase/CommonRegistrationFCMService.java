@@ -4,7 +4,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.messaging.FirebaseMessaging;
+//import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
@@ -17,12 +17,6 @@ import com.tlv.vincles.tlvincles.Utils.MyApplication;
 
 import java.io.IOException;
 
-//import cat.bcn.vincles.mobile.BuildConfig;
-//import cat.bcn.vincles.mobile.Client.Enviroment.Environment;
-//import cat.bcn.vincles.mobile.Client.Preferences.UserPreferences;
-//import cat.bcn.vincles.mobile.Client.Requests.VinclesHttpClient;
-//import cat.bcn.vincles.mobile.Client.Services.InstallationService;
-//import cat.bcn.vincles.mobile.Utils.MyApplication;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -63,10 +57,11 @@ public class CommonRegistrationFCMService {
 
     // Non-blocking methods. No need to use AsyncTask or background thread.
     private static void subscribeTopics() throws IOException {
-        Log.i(TAG, "Subscribing to receive asynchornous messages from Firebase.");
-        for (String topic : TOPICS) {
-            FirebaseMessaging.getInstance().subscribeToTopic("mytopic");
-        }
+        // ok
+//        Log.i(TAG, "Subscribing to receive asynchornous messages from Firebase.");
+//        for (String topic : TOPICS) {
+//            FirebaseMessaging.getInstance().subscribeToTopic("mytopic");
+//        }
     }
 
 

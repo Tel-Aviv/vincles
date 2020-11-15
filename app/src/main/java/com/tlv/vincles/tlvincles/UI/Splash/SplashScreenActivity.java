@@ -66,7 +66,7 @@ public class SplashScreenActivity extends AppCompatActivity implements AlertMess
 
         //showVersionControl();
 
-       // startTimer();
+        startTimer();
     }
 
     @Override

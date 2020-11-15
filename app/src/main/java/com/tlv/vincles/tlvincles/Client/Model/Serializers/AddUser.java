@@ -5,9 +5,6 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.tlv.vincles.tlvincles.Client.Model.GetUser;
 
-//import cat.bcn.vincles.mobile.Client.Model.GetUser;
-
-
 public class AddUser {
 
     @SerializedName("relationship")

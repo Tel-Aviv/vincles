@@ -36,6 +36,7 @@ public class AddContactPresenter implements AddContactPresenterContract, Contact
 
     @Override
     public void onResponseGenerateUserCode(String code) {
+        // ok
         addContactView.showCode(code);
         addContactView.hideWaitDialog();
     }

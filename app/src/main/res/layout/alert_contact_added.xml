@@ -26,6 +26,7 @@
         android:layout_marginTop="@dimen/dialogs_margin_below_close"
         android:layout_centerHorizontal="true"
         android:fontFamily="@font/akkurat"
+        android:lines="2"
         android:textSize="@dimen/dialogs_text_size"
         android:layout_below="@+id/userAvatar"/>
 
@@ -37,7 +38,6 @@
         android:layout_below="@+id/dialogText"
         android:layout_marginLeft="@dimen/dialogs_margin_bottom_buttons_inner_half"
         android:layout_marginRight="@dimen/dialogs_margin_bottom_buttons_inner_half"
-        android:layout_weight="1"
         android:background="@drawable/selector_buttons_background"
         android:text="@string/accept"
         android:textAllCaps="false"

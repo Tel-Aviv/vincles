@@ -498,6 +498,7 @@ public class ContactsRepository implements GetCircleUserRequest.OnResponse, GetU
 
     @Override
     public void onResponseAddUser(AddUser response) {
+
         new UsersDb(MyApplication.getAppContext()).addUser(response);
         createContactFromUserAdded(response);
     }

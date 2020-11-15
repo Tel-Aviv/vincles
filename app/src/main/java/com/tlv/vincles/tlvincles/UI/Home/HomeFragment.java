@@ -40,7 +40,6 @@ import java.util.List;
 import io.realm.Realm;
 import io.realm.RealmResults;
 
-
 public class HomeFragment extends BaseFragment implements View.OnClickListener, HomeFragmentView {
 
     private OnFragmentInteractionListener mListener;
@@ -94,7 +93,6 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
             Log.d("dynamizer name", d.getName());
             String accessToken = new UserPreferences().getAccessToken();
 
-
             GetUserPhotoRequest getUserPhotoRequest = new GetUserPhotoRequest(new BaseRequest.RenewTokenFailed() {
                 @Override
                 public void onRenewTokenFailed() {
@@ -129,8 +127,8 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
     public void onResume() {
         super.onResume();
 
-        OtherUtils.sendAnalyticsView(getActivity(),
-                getResources().getString(R.string.tracking_home));
+//        OtherUtils.sendAnalyticsView(getActivity(),
+//                getResources().getString(R.string.tracking_home));
 
         Log.d("homeimg", "onResume HomeFragment");
         if (presenter != null) {
