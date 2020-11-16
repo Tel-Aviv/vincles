@@ -31,7 +31,8 @@ public interface ChatService {
     @POST("/t/vincles-bcn.cat/vincles-services/1.0/community/message")
     Call<ChatMessagesSentResponse> sendChatMessageMulticast(@Body ChatMessageMulticastRest chatMessageRest);
 
-    @GET("/t/vincles-bcn.cat/vincles-services/1.0/messages/chat/{idUserSender}")
+    //@GET("/t/vincles-bcn.cat/vincles-services/1.0/messages/chat/{idUserSender}")
+    @GET("/messages/chat/{idUserSender}")
     public Call<ArrayList<ChatMessageRest>> getUserMessages(@Path("idUserSender") String idUserSender, @QueryMap Map<String, String> params);
 
     @GET("/t/vincles-bcn.cat/vincles-services/1.0/messages/mine")

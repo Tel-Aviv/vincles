@@ -67,7 +67,12 @@ import static com.tlv.vincles.tlvincles.UI.Chats.ChatPresenter.MEDIA_PHOTO;
 import static com.tlv.vincles.tlvincles.UI.Chats.ChatPresenter.MEDIA_VIDEO;
 
 
-public class ChatFragment extends BaseFragment implements ChatFragmentView, View.OnClickListener, ChatAdapter.ChatAdapterListener, AlertRetry.AlertSaveImageInGalleryInterface, AlertMessage.AlertMessageInterface {
+public class ChatFragment extends BaseFragment
+        implements ChatFragmentView,
+                View.OnClickListener,
+                ChatAdapter.ChatAdapterListener,
+                AlertRetry.AlertSaveImageInGalleryInterface,
+                AlertMessage.AlertMessageInterface {
 
     private static final int NORMAL_BOTTOM_BAR = 0;
     private static final int TEXT_BOTTOM_BAR = 1;
@@ -168,11 +173,12 @@ public class ChatFragment extends BaseFragment implements ChatFragmentView, View
             chatRepository = (ChatRepository) repo;
         } else {
             chatRepository = null;
-            getParentFragmentManager().beginTransaction().remove(repo);
+            if( repo != null )
+                getParentFragmentManager().beginTransaction().remove(repo);
         }
 
         if (chatRepository != null && savedInstanceState == null) {
-            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            FragmentTransaction ft = getParentFragmentManager().beginTransaction();
             ft.remove(chatRepository);
             chatRepository = null;
         }
@@ -180,19 +186,19 @@ public class ChatFragment extends BaseFragment implements ChatFragmentView, View
             chatRepository = ChatRepository.newInstance(presenter,
                     (BaseRequest.RenewTokenFailed) getActivity(), new UserPreferences().getUserID(),
                     Integer.parseInt(idChat), isGroupChat, isDynamizer, realm);
-            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            FragmentTransaction ft = getParentFragmentManager().beginTransaction();
             ft.add(chatRepository, REPOSITORY_FRAGMENT_TAG).commit();
         } else {
             chatRepository.setListeners(presenter, (BaseRequest.RenewTokenFailed) getActivity());
         }
         presenter.setChatRepository(chatRepository);
 
-        ChatAudioRecorderFragment audioRecorderFragment = (ChatAudioRecorderFragment)getFragmentManager().findFragmentByTag(AUDIO_RECORDER_FRAGMENT_TAG);
+        ChatAudioRecorderFragment audioRecorderFragment = (ChatAudioRecorderFragment)getParentFragmentManager().findFragmentByTag(AUDIO_RECORDER_FRAGMENT_TAG);
         if (audioRecorderFragment == null) {
             audioRecorderFragment = new ChatAudioRecorderFragment();
             audioRecorderFragment.setPresenterAudio(presenter, this);
             audioRecorderFragment.setRetainInstance(true);
-            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            FragmentTransaction ft = getParentFragmentManager().beginTransaction();
             ft.add(audioRecorderFragment, AUDIO_RECORDER_FRAGMENT_TAG).commitAllowingStateLoss();
             presenter.setAudioRecorderFragment(audioRecorderFragment);
         } else {
@@ -640,7 +646,7 @@ public class ChatFragment extends BaseFragment implements ChatFragmentView, View
         });
         View sendButton = bottomBar.findViewById(R.id.send);
         messageET.requestFocus();
-        InputMethodManager imm = (InputMethodManager) Objects.requireNonNull(getContext()).getSystemService(Context.INPUT_METHOD_SERVICE);
+        InputMethodManager imm = (InputMethodManager) requireContext().getSystemService(Context.INPUT_METHOD_SERVICE);
         if (imm != null) {
             imm.showSoftInput(messageET, InputMethodManager.SHOW_IMPLICIT);
         }
@@ -708,7 +714,7 @@ public class ChatFragment extends BaseFragment implements ChatFragmentView, View
             case R.id.back:
                 OtherUtils.hideKeyboard(getActivity());
                 onExitScreen();
-                Objects.requireNonNull(getFragmentManager()).popBackStack();
+                Objects.requireNonNull(getParentFragmentManager()).popBackStack();
                 break;
             case R.id.text:
                 presenter.onClickText();
@@ -720,7 +726,7 @@ public class ChatFragment extends BaseFragment implements ChatFragmentView, View
                 }
                 LoginActivity.screenOrientation = -1;
 
-                if (ContextCompat.checkSelfPermission(Objects.requireNonNull(getActivity()), Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+                if (ContextCompat.checkSelfPermission(requireActivity(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
                     newMediaFile = OtherUtils.sendPhotoIntent(this, false);
                 } else {
                     if (!shouldShowRequestPermissionRationale(Manifest.permission.CAMERA)){
@@ -741,7 +747,7 @@ public class ChatFragment extends BaseFragment implements ChatFragmentView, View
 
                 LoginActivity.screenOrientation = -1;
 
-                if (ContextCompat.checkSelfPermission(Objects.requireNonNull(getActivity()),
+                if (ContextCompat.checkSelfPermission(requireActivity(),
                         Manifest.permission.READ_EXTERNAL_STORAGE)
                         == PackageManager.PERMISSION_GRANTED &&
                         ContextCompat.checkSelfPermission(getActivity(),
@@ -777,7 +783,7 @@ public class ChatFragment extends BaseFragment implements ChatFragmentView, View
                     chatAdapter.stopPlayingAudio();
                 }
 
-                if (ContextCompat.checkSelfPermission(Objects.requireNonNull(getActivity()),
+                if (ContextCompat.checkSelfPermission(requireActivity(),
                         Manifest.permission.RECORD_AUDIO)
                         == PackageManager.PERMISSION_GRANTED) {
                     presenter.onClickAudio();
@@ -794,7 +800,7 @@ public class ChatFragment extends BaseFragment implements ChatFragmentView, View
                 break;
             case R.id.file:
                 LoginActivity.screenOrientation = -1;
-                if (ContextCompat.checkSelfPermission(Objects.requireNonNull(getActivity()),
+                if (ContextCompat.checkSelfPermission(requireActivity(),
                         Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
                     presenter.onClickFileShare();
                 } else {
@@ -843,9 +849,9 @@ public class ChatFragment extends BaseFragment implements ChatFragmentView, View
                     }
                     if (otherUser != null) {
                         RequestsUtils.getInstance().cancelGalleryCalls();
-                        if (ContextCompat.checkSelfPermission(Objects.requireNonNull(getActivity()),
+                        if (ContextCompat.checkSelfPermission(requireActivity(),
                                         Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED
-                        && ContextCompat.checkSelfPermission(Objects.requireNonNull(getActivity()),
+                        && ContextCompat.checkSelfPermission(requireActivity(),
                                 Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED) {
 
                             if (!OtherUtils.checkIfMicrophoneIsBusy()){
@@ -916,7 +922,7 @@ public class ChatFragment extends BaseFragment implements ChatFragmentView, View
         } else if (requestCode == OtherUtils.REQUEST_VIDEO_CAPTURE && resultCode == RESULT_OK) {
             Uri _uri = data.getData();
             if (_uri != null && "content".equals(_uri.getScheme())) {
-                Cursor cursor = Objects.requireNonNull(getActivity()).getContentResolver().query(_uri, new String[] { android.provider.MediaStore.Images.ImageColumns.DATA }, null, null, null);
+                Cursor cursor = requireActivity().getContentResolver().query(_uri, new String[] { android.provider.MediaStore.Images.ImageColumns.DATA }, null, null, null);
                 Objects.requireNonNull(cursor).moveToFirst();
                 newMediaFile = Uri.parse(cursor.getString(0)).getPath();
                 cursor.close();
@@ -943,7 +949,7 @@ public class ChatFragment extends BaseFragment implements ChatFragmentView, View
             String path;
             try {
                 path = ImageUtils.decodeFile(ImageUtils.getRealPathFromURI(uri,
-                        Objects.requireNonNull(getActivity())));
+                        requireActivity()));
 
                 presenter.onSendSystemFile(path, mimeType);
             } catch (IOException e) {
@@ -1001,7 +1007,7 @@ public class ChatFragment extends BaseFragment implements ChatFragmentView, View
                     chatRepository = ChatRepository.newInstance(presenter,
                       (BaseRequest.RenewTokenFailed) getActivity(), new UserPreferences().getUserID(),
                       Integer.parseInt(idChat), isGroupChat, isDynamizer, realm);
-                    FragmentTransaction ft = Objects.requireNonNull(getFragmentManager()).beginTransaction();
+                    FragmentTransaction ft = Objects.requireNonNull(getParentFragmentManager()).beginTransaction();
                     ft.add(chatRepository, REPOSITORY_FRAGMENT_TAG).commit();
                     break;
                 }

@@ -26,19 +26,9 @@ import java.util.concurrent.TimeUnit;
 
 import static com.tlv.vincles.tlvincles.UI.Chats.ChatPresenter.MEDIA_AUDIO;
 
-//import cat.bcn.vincles.mobile.UI.Alert.AlertMessage;
-//import cat.bcn.vincles.mobile.R;
-//import cat.bcn.vincles.mobile.UI.Alert.AlertConfirmOrCancel;
-//import cat.bcn.vincles.mobile.UI.Alert.AlertListenAudioChat;
-//import cat.bcn.vincles.mobile.Utils.Constants;
-//import cat.bcn.vincles.mobile.Utils.DateUtils;
-//import cat.bcn.vincles.mobile.Utils.ImageUtils;
-//import cat.bcn.vincles.mobile.Utils.MyApplication;
-//import cat.bcn.vincles.mobile.Utils.OtherUtils;
-//
-//import static cat.bcn.vincles.mobile.UI.Chats.ChatPresenter.MEDIA_AUDIO;
-
-public class ChatAudioRecorderFragment extends Fragment implements AlertListenAudioChat.AlertListenAudioChatInterface, AlertMessage.AlertMessageInterface {
+public class ChatAudioRecorderFragment extends Fragment
+        implements AlertListenAudioChat.AlertListenAudioChatInterface,
+                    AlertMessage.AlertMessageInterface {
 
     MediaRecorder audioRecorder;
     CountDownTimer audioTimer;
